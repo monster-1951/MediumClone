@@ -1,9 +1,9 @@
 import React, { useState,useRef,useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { CiBellOn } from "react-icons/ci";
-import { FaUserCircle } from "react-icons/fa";
 import { v4 as uuidv4 } from 'uuid';
 import DropDown from "./DropDown";
+import ProfileDropDown from "./ProfileDropDown";
 
 const WriteArticle = () => {
   const [heading, setheading] = useState('')
@@ -14,19 +14,12 @@ const WriteArticle = () => {
   const dataRef = useRef();
   const headRef = useRef();
   
-  
-  
-  
- 
-  
-  
-  
   useEffect(() => { 
-    console.log(Draft);
+    // console.log(Draft);
   })
     return (
     <>
-      <nav className="flex justify-between">
+      <nav className="flex justify-between sticky top-0 h-20 shadow-md px-2">
         <NavLink to="/" className="flex">
           <img src="MediumLogo.png" alt="" />
           <span className="p-5" ref={savingRef}>Draft in User786</span>
@@ -44,7 +37,7 @@ const WriteArticle = () => {
             <CiBellOn />
           </NavLink>
           <NavLink>
-            <FaUserCircle className="" />
+            <ProfileDropDown/>
           </NavLink>
         </div>
       </nav>

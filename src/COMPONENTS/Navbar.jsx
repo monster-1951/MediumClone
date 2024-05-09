@@ -3,9 +3,10 @@ import { NavLink } from "react-router-dom";
 import { FaRegEdit } from "react-icons/fa";
 import { CiBellOn } from "react-icons/ci";
 import { FaUserCircle } from "react-icons/fa";
+import ProfileDropDown from "./ProfileDropDown";
 const Navbar = () => {
   return (
-    <nav className="top-0">
+    <nav className=" sticky top-0 h-20 shadow-md px-4 bg-white z-10">
       <div className="flex justify-between">
         <div className="flex space-x-4 p-5 align-middle">
           <NavLink to="/">
@@ -18,7 +19,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search"
-              className="border-black p-3 h-8"
+              className="p-3 h-8 shadow-inner"
             />
           </form>
         </div>
@@ -29,7 +30,7 @@ const Navbar = () => {
            </NavLink>
             </span>
         <CiBellOn className="mt-1"/>
-        <FaUserCircle className="mt-1" />
+        <ProfileDropDown className="mt-1"/>
         </div>
       </div>
     </nav>

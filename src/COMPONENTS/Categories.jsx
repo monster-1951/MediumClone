@@ -19,7 +19,7 @@ const Categories = () => {
 
   return (
     <>
-      <div className="flex space-x-1 sticky top-0">
+      <div className="flex space-x-1 sticky top-20 bg-white p-3 shadow-md z-0">
       <button onClick={scrollCategoriesLeft}>
           <MdOutlineKeyboardArrowLeft className="mt-1.5" />
         </button>
