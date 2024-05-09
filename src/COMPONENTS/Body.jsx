@@ -1,6 +1,8 @@
-import React from 'react'
+import React ,{useState}from 'react'
 
 const Body = () => {
+    // const [blogs, setblogs] = useState([]);
+    // setblogs([{}])
   return (
     <>
     <div className='flex justify-around'>
