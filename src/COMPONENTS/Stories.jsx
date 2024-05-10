@@ -48,9 +48,9 @@ const Stories = () => {
             </NavLink>
           </nav>
         </div>
-       <body className="shadow-sm">
+       <div className="shadow-sm">
         Drafts
-       </body>
+       </div>
       </div>
     </div>
   );

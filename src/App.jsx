@@ -6,6 +6,8 @@ import Categories from "./COMPONENTS/Categories";
 import Body from "./COMPONENTS/Body";
 import WriteArticle from "./COMPONENTS/WriteArticle";
 import Stories from "./COMPONENTS/Stories";
+import Publish from "./COMPONENTS/Publish";
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -13,8 +15,16 @@ function App() {
       element:<><Navbar/><Categories/><Body/></>
     },
     {
+      path:"/LearnMore",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
       path:"/Write",
       element:<><WriteArticle/></>
+    },
+    {
+      path:"/Write/Publish",
+      element:<><Publish/></>
     },
     {
       path:"/Stories/Drafts",

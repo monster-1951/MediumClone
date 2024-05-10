@@ -6,17 +6,20 @@ import DropDown from "./DropDown";
 import ProfileDropDown from "./ProfileDropDown";
 
 const WriteArticle = () => {
+  const id = uuidv4();
   const [heading, setheading] = useState('')
   const [data, setdata] = useState('')
-  const [Draft, setDraft] = useState([])
+  const [Draft, setDraft] = useState({Heading:heading,Data:data})
   const [someText, setsomeText] = useState(false)
   const savingRef = useRef();
   const dataRef = useRef();
   const headRef = useRef();
+
   
   useEffect(() => { 
-    // console.log(Draft);
-  })
+    console.log(Draft);
+    // console.log(DraftList);
+  },[heading,data])
     return (
     <>
       <nav className="flex justify-between sticky top-0 h-20 shadow-md px-2">
@@ -25,8 +28,8 @@ const WriteArticle = () => {
           <span className="p-5" ref={savingRef}>Draft in User786</span>
         </NavLink>
         <div className="flex p-5 justify-around space-x-4">
-          <NavLink to="/">
-            <button className={someText?"bg-green-400 text-white rounded-full p-2 text-xs font-bold ":"bg-green-400 text-white rounded-full p-2 text-xs font-bold cursor-not-allowed opacity-75"} disabled={data.length<1 && heading.length<1}>
+          <NavLink to="/Write/Publish" >
+            <button className={someText?"bg-green-600 text-white rounded-full p-2 text-xs font-bold ":"bg-green-400 text-white rounded-full p-2 text-xs font-bold cursor-not-allowed opacity-75"} disabled={data.length<1 && heading.length<1}>
               Publish
             </button>
           </NavLink>
@@ -46,12 +49,12 @@ const WriteArticle = () => {
       ref={headRef}
         type="text"
         placeholder="Title"
-        className="w-full h-20 text-5xl p-5 text-pretty"
+        className="w-full h-20 text-5xl p-5 text-pretty outline-none"
         value={heading}
-        onChange={async (e) => {
+        onChange={(e) => {
           setheading(e.target.value)
-          setDraft([{Heading:heading,Data:data,id:uuidv4()}])
-          savingRef.current.innerText = "Saving..."
+          setDraft({Heading:headRef.current.value,Data:dataRef.current.value})
+         
           setTimeout(() => {
             savingRef.current.innerText = "Saved"
           }, 800);
@@ -67,11 +70,12 @@ const WriteArticle = () => {
       <textarea
       ref={dataRef}
         placeholder="Tell your story..."
-        className="w-full h-56 p-5 text-justify text-pretty"
+        className="w-full h-56 p-5 text-justify text-pretty outline-none"
         value={data}
         onChange={(e) => {
             setdata(e.target.value)
-            setDraft([{Heading:heading,Data:data,id:uuidv4()}])
+            setDraft({Heading:headRef.current.value,Data:dataRef.current.value})
+  
             savingRef.current.innerText = "Saving..."
             setTimeout(() => {
               savingRef.current.innerText = "Saved"
