@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import {createBrowserRouter,RouterProvider } from "react-router-dom";
 import Navbar from "./COMPONENTS/Navbar";
@@ -7,8 +7,10 @@ import Body from "./COMPONENTS/Body";
 import WriteArticle from "./COMPONENTS/WriteArticle";
 import Stories from "./COMPONENTS/Stories";
 import Publish from "./COMPONENTS/Publish";
+import {data2} from './CONTEXT/context'
 
 function App() {
+  const [post,setPost] = useState({});
   const router = createBrowserRouter([
     {
       path:"/",
@@ -23,7 +25,7 @@ function App() {
       element:<><WriteArticle/></>
     },
     {
-      path:"/Write/Publish",
+      path:"/Publish",
       element:<><Publish/></>
     },
     {
@@ -32,9 +34,9 @@ function App() {
     },
   ])
   return (
-    <>
+    <data2.Provider value={{post,setPost}}>
       <RouterProvider router={router}></RouterProvider>  
-    </>
+    </data2.Provider>
   );
 }
 

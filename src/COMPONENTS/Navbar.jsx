@@ -17,7 +17,7 @@ const Navbar = () => {
             <img src="/Search.png" alt="Search" className="w-6 h-6 mt-1" />
             </label>
             <input
-              type="text"
+              type="search"
               placeholder="Search"
               className="p-3 h-8 shadow-inner"
             />

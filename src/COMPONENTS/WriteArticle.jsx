@@ -1,15 +1,16 @@
-import React, { useState,useRef,useEffect } from "react";
+import React, { useState,useRef,useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { CiBellOn } from "react-icons/ci";
 import { v4 as uuidv4 } from 'uuid';
 import DropDown from "./DropDown";
 import ProfileDropDown from "./ProfileDropDown";
+import { data2 } from "../CONTEXT/context";
 
 const WriteArticle = () => {
+  const Post = useContext(data2)
   const id = uuidv4();
   const [heading, setheading] = useState('')
   const [data, setdata] = useState('')
-  const [Draft, setDraft] = useState({Heading:heading,Data:data})
   const [someText, setsomeText] = useState(false)
   const savingRef = useRef();
   const dataRef = useRef();
@@ -17,7 +18,7 @@ const WriteArticle = () => {
 
   
   useEffect(() => { 
-    console.log(Draft);
+    console.log(Post.post);
     // console.log(DraftList);
   },[heading,data])
     return (
@@ -28,7 +29,7 @@ const WriteArticle = () => {
           <span className="p-5" ref={savingRef}>Draft in User786</span>
         </NavLink>
         <div className="flex p-5 justify-around space-x-4">
-          <NavLink to="/Write/Publish" >
+          <NavLink to="/Publish" >
             <button className={someText?"bg-green-600 text-white rounded-full p-2 text-xs font-bold ":"bg-green-400 text-white rounded-full p-2 text-xs font-bold cursor-not-allowed opacity-75"} disabled={data.length<1 && heading.length<1}>
               Publish
             </button>
@@ -53,7 +54,7 @@ const WriteArticle = () => {
         value={heading}
         onChange={(e) => {
           setheading(e.target.value)
-          setDraft({Heading:headRef.current.value,Data:dataRef.current.value})
+          Post.setPost({Heading:headRef.current.value,Data:dataRef.current.value})
          
           setTimeout(() => {
             savingRef.current.innerText = "Saved"
@@ -74,7 +75,7 @@ const WriteArticle = () => {
         value={data}
         onChange={(e) => {
             setdata(e.target.value)
-            setDraft({Heading:headRef.current.value,Data:dataRef.current.value})
+            Post.setPost({Heading:headRef.current.value,Data:dataRef.current.value})
   
             savingRef.current.innerText = "Saving..."
             setTimeout(() => {

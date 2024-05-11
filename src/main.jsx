@@ -5,6 +5,8 @@ import './index.css'
 import store from './REDUX/store.js'
 import { Provider } from 'react-redux'
 import 'react-tagsinput/react-tagsinput.css'
+import 'react-quill/dist/quill.snow.css';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import DraftsReducer from './Drafts/DraftSlice'
+import PostsReducer from './Drafts/DraftSlice'
 
 export default configureStore({
   reducer: {
-    Drafts:DraftsReducer,
+    Posts:PostsReducer,
   },
 })
