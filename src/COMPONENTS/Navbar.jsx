@@ -10,27 +10,30 @@ const Navbar = () => {
       <div className="flex justify-between">
         <div className="flex space-x-4 p-5 align-middle">
           <NavLink to="/">
-            <img src="/MediumLogo.png" alt="" />
+            <img src="/MediumLogo.png" alt="" className="hidden sm:block"/>
           </NavLink>
           <form className="flex space-x-4 p-3 align-middle">
             <label htmlFor="search">
-            <img src="/Search.png" alt="Search" className="w-6 h-6 mt-1" />
+              <img src="/Search.png" alt="Search" className="w-6 h-6 mt-1 sm:hidden md:block" />
             </label>
             <input
               type="search"
               placeholder="Search"
-              className="p-3 h-8 shadow-inner"
+              className="p-3 h-8 shadow-inner w-25 outline-none"
             />
           </form>
         </div>
-        <div className="flex justify-between space-x-4 mt-9">
-        <span className="flex space-x-2">
-           <NavLink to="/Write" className="flex">
-           <FaRegEdit className="mt-1" /><span>Write</span>
-           </NavLink>
-            </span>
-        <CiBellOn className="mt-1"/>
-        <ProfileDropDown className="mt-1"/>
+        <div className="flex mt-9 space-x-3">
+          <span className="hidden md:block">
+            <NavLink to="/Write" className="flex">
+              <FaRegEdit className="mt-1" />
+              <span>Write</span>
+            </NavLink>
+          </span>
+          <div className="flex space-x-3">
+          <CiBellOn className="mt-1" />
+          <ProfileDropDown className="mt-1" />
+          </div>
         </div>
       </div>
     </nav>

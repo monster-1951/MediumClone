@@ -1,13 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import PostedStories from "./PostedStories";
 
 const Stories = () => {
   return (
-    <div className="flex justify-between">
-      <div className="shadow-md lg:w-3/4 sm:w-full">
+    <div className="flex ">
+      <div className="shadow-md w-full">
         <div id="head" className="shadow-sm">
           <div className="flex justify-between p-5">
-            <p className="text-5xl font-semibold">Your stories</p>
+            <p className="md:text-5xl text-2xl m-3 font-semibold">Your stories</p>
             <div className="flex space-x-3 p-2">
               <NavLink to="/Write" className="h-1/2">
                 <button className="rounded-full p-2 bg-green-600 text-white">
@@ -34,7 +35,7 @@ const Stories = () => {
               className={(e) => {
                 return e.isActive ? "underline underline-offset-8" : "";
               }}
-              to="/"
+              to="/Stories/Published"
             >
               Published
             </NavLink>
@@ -48,9 +49,6 @@ const Stories = () => {
             </NavLink>
           </nav>
         </div>
-       <div className="shadow-sm">
-        Drafts
-       </div>
       </div>
     </div>
   );

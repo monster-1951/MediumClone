@@ -7,25 +7,25 @@ import { useDispatch } from "react-redux";
 import { InsertToPosts } from "../REDUX/Drafts/DraftSlice";
 import { nanoid } from "@reduxjs/toolkit";
 const Publish = () => {
+  const currentDate = new Date()
   const dispatch = useDispatch();
   const Postt = useContext(data2);
   const [Title, setTitle] = useState(Postt.post.Heading);
   const [Body, setBody] = useState(Postt.post.Data);
-  const [PreviewTitle, setPreviewTitle] = useState("");
-  const [PreviewSubtitle, setPreviewSubtitle] = useState("");
+  const [PreviewTitle, setPreviewTitle] = useState(Title);
+  const [PreviewSubtitle, setPreviewSubtitle] = useState(Body);
   const [file, setfile] = useState("");
   const [tags, settags] = useState([]);
   const handleChange = (e) => {
     console.log(e.target.files[0]);
     setfile(URL.createObjectURL(e.target.files[0]));
   };
-
   useEffect(() => {
     console.log(Postt.post);
   });
 
   return (
-    <div className="flex flex-col sm:flex-col md:flex-row mt-6">
+    <div className="flex flex-col sm:flex-col lg:flex-row mt-6">
       <div className="flex flex-col p-3 sm:w-full lg:w-1/2">
         <p className="text-left p-2 flex justify-between">
           <b className="font-bold">Story Preview</b>
@@ -37,10 +37,10 @@ const Publish = () => {
         </p>
         <div className="h-60 md:w-full p-2">
           {file ? (
-            <img src={file} alt="" className="h-60 w-full shrink-0" />
+            <img src={file} alt="" className="h-50 w-full shrink-0" />
           ) : (
-            <div className="h-60 w-full shadow-inner bg-gray-100">
-              <p className="m-10 p-10">
+            <div className="h-full w-full shadow-inner bg-gray-100">
+              <p className="p-10">
                 Include a high-quality image in your story to make it more
                 inviting to readers.
               </p>
@@ -111,7 +111,7 @@ const Publish = () => {
           about what happens to your post when you publish.
         </p>
         <div className="flex p-3 space-x-[10%]">
-          <NavLink to="/">
+          <NavLink to="/Stories/Published">
             <button
               className="bg-green-700 text-white rounded-full p-2 text-xs font-bold w-[150%]"
               onClick={() => {
@@ -121,6 +121,7 @@ const Publish = () => {
                   PreviewTitle:PreviewTitle,PreviewSubtitle:PreviewSubtitle,
                   PreviewImage:file,
                   id:nanoid(),
+                  PublishedOn: `${currentDate.getDate()}/${currentDate.getMonth()+1}/${currentDate.getFullYear()}`
                 }))
               }}
             >

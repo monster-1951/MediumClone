@@ -5,22 +5,31 @@ import { v4 as uuidv4 } from 'uuid';
 import DropDown from "./DropDown";
 import ProfileDropDown from "./ProfileDropDown";
 import { data2 } from "../CONTEXT/context";
+import { useDispatch, useSelector } from "react-redux";
+import { DeleteThisPost } from "../REDUX/Drafts/DraftSlice";
 
 const WriteArticle = () => {
+  const Posts = useSelector(state => state.Posts.value);
+  const dispatch = useDispatch()
   const Post = useContext(data2)
-  const id = uuidv4();
-  const [heading, setheading] = useState('')
-  const [data, setdata] = useState('')
+  let EditIt = Posts.filter((i) => {
+    return i.id == Post.post
+  }
+  );
+  let id = EditIt[0]?.id;
+  const [heading, setheading] = useState(EditIt[0]?.Title?EditIt[0].Title:'')
+  const [data, setdata] = useState(EditIt[0]?.Body?EditIt[0].Body:'')
   const [someText, setsomeText] = useState(false)
   const savingRef = useRef();
   const dataRef = useRef();
   const headRef = useRef();
 
-  
+  const getPost = () => {
+    console.log(EditIt[0]?.Title);
+  }
   useEffect(() => { 
-    console.log(Post.post);
-    // console.log(DraftList);
-  },[heading,data])
+    getPost()
+})
     return (
     <>
       <nav className="flex justify-between sticky top-0 h-20 shadow-md px-2">
@@ -30,7 +39,11 @@ const WriteArticle = () => {
         </NavLink>
         <div className="flex p-5 justify-around space-x-4">
           <NavLink to="/Publish" >
-            <button className={someText?"bg-green-600 text-white rounded-full p-2 text-xs font-bold ":"bg-green-400 text-white rounded-full p-2 text-xs font-bold cursor-not-allowed opacity-75"} disabled={data.length<1 && heading.length<1}>
+            <button className={someText?"bg-green-600 text-white rounded-full p-2 text-xs font-bold ":"bg-green-400 text-white rounded-full p-2 text-xs font-bold cursor-not-allowed opacity-75"} disabled={data.length<1 && heading.length<1} onClick={() => {
+              // if(EditIt[0])
+              dispatch(DeleteThisPost(id))
+            }
+            }>
               Publish
             </button>
           </NavLink>
