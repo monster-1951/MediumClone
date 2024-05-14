@@ -7,7 +7,7 @@ import StaffPicks from "./StaffPicks";
 import { postToBeDeleted } from "../CONTEXT/context";
 
 const PostedStories = () => {
-  const postId = useContext(postToBeDeleted?postToBeDeleted:"")
+  const postId = useContext(postToBeDeleted ? postToBeDeleted : "");
   const MyPosts = useSelector((state) => state.Posts.value);
   useEffect(() => {
     console.log(MyPosts);
@@ -16,8 +16,8 @@ const PostedStories = () => {
 
   return (
     <div className="lg:flex w-full">
-      <div className="flex justify-between w-full">
-        <div className="shadow-md lg:w-3/4 sm:w-full">
+      <div className="flex justify-between space-x-2">
+        <div className="shadow-md sm:w-full">
           <div id="head" className="shadow-md w-full">
             <div className="flex justify-between p-5">
               <p className="md:text-5xl text-2xl font-bold text-left m-3">
@@ -69,23 +69,31 @@ const PostedStories = () => {
                 return (
                   <div
                     key={e.id}
-                    className="w-full text-left p-3 space-y-3 font-light h-36"
+                    className="w-full text-left p-3 space-y-3 font-light h-48"
                   >
-                    <img src={e.PreviewImage} alt="" />
-                    <div className="text-xl font-extrabold">
-                      {e.PreviewTitle}
+                    <div className="flex space-x-3">
+                      <div>
+                        <div className="text-xl font-extrabold">
+                          {e.PreviewTitle}
+                        </div>
+                        <h3 className="">{e.PreviewSubtitle}</h3>
+                        {e.PreviewSubtitle !== e.Body && (
+                          <p className="">{e.Body}</p>
+                        )}
+                      </div>
+                      <img
+                        src={e.PreviewImage}
+                        alt=""
+                        className="rounded-lg w-40 h-32"
+                      />
                     </div>
-                    <h3 className="">{e.PreviewSubtitle}</h3>
-                    {e.PreviewSubtitle !== e.Body && (
-                      <p className="">{e.Body}</p>
-                    )}
 
                     <div className="flex">
                       <span>Published on {e.PublishedOn}</span>
                       <div className="flex space-x-3 justify-between">
                         {" "}
-                        <ShareDropDown postNumber={e.id}/>
-                        <MoreDropDown  postNumber={e.id} />
+                        <ShareDropDown postNumber={e.id} />
+                        <MoreDropDown postNumber={e.id} />
                       </div>
                     </div>
                     <hr />
@@ -96,7 +104,7 @@ const PostedStories = () => {
           </div>
         </div>
       </div>
-      <StaffPicks />
+      <StaffPicks className="" />
     </div>
   );
 };

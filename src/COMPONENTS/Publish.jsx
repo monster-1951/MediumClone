@@ -35,9 +35,9 @@ const Publish = () => {
             </button>
           </NavLink>
         </p>
-        <div className="h-60 md:w-full p-2">
+        <div className="md:w-full p-2">
           {file ? (
-            <img src={file} alt="" className="h-50 w-full shrink-0" />
+            <img src={file} alt="" className=" w-full" />
           ) : (
             <div className="h-full w-full shadow-inner bg-gray-100">
               <p className="p-10">
@@ -118,10 +118,12 @@ const Publish = () => {
                 dispatch(InsertToPosts({
                   Title:Postt.post.Heading,
                   Body:Postt.post.Data,
-                  PreviewTitle:PreviewTitle,PreviewSubtitle:PreviewSubtitle,
+                  PreviewTitle:PreviewTitle,
+                  PreviewSubtitle:PreviewSubtitle,
                   PreviewImage:file,
                   id:nanoid(),
-                  PublishedOn: `${currentDate.getDate()}/${currentDate.getMonth()+1}/${currentDate.getFullYear()}`
+                  PublishedOn: `${currentDate.getDate()}/${currentDate.getMonth()+1}/${currentDate.getFullYear()}`,
+                  Tags:tags
                 }))
               }}
             >

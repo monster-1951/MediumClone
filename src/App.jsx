@@ -11,6 +11,7 @@ import PostedStories from "./COMPONENTS/PostedStories";
 import StaffPicks from "./COMPONENTS/StaffPicks";
 import ForYou from "./COMPONENTS/ForYou";
 import DeletePost from "./COMPONENTS/DeletePost";
+import Body from "./COMPONENTS/Body"
 
 function App() {
   const [DelThisPost, setDelThisPost] = useState(0)
@@ -18,11 +19,11 @@ function App() {
   const router = createBrowserRouter([
     {
       path:"/",
-      element:<><Navbar/><Categories/><ForYou/><StaffPicks/></>
+      element:<><Navbar/><Categories/><Body/></>
     },
     {
       path:"/LearnMore",
-      element:<><Navbar/><Categories/><ForYou/><StaffPicks/></>
+      element:<><Navbar/><Categories/><Body/></>
     },
     {
       path:"/Write",

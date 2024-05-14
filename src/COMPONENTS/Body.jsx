@@ -1,13 +1,23 @@
-import React ,{useState}from 'react'
+import React ,{useState,useRef,useEffect}from 'react'
+import ForYou from './ForYou'
+import StaffPicks from './StaffPicks'
 
 const Body = () => {
+  const StfpcksRef = useRef()
+  let height ;
+
+  useEffect(() => {
+    height = StfpcksRef.current.clientHeight + "px"
+    console.log(height)
+  })
+  
     // const [blogs, setblogs] = useState([]);
     // setblogs([{}])
   return (
     <>
-    <div className='flex justify-around'>
-    <div>Feed</div>
-    <div className='-mt-6'>Recommended topics</div>
+    <div className={`lg:flex lg:h-[1200px]`}>
+    <div className={`lg:w-3/5 overflow-y-auto `}><ForYou/></div>
+    <div className='lg:w-2/5 sticky top-0 max-h-[1269px] -z-10' ref={StfpcksRef}><StaffPicks/></div>
     </div>
     </>
   )
