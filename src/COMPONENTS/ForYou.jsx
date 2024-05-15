@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { BsThreeDots, BsEmojiExpressionless } from "react-icons/bs";
-import { MdOutlineBookmarkAdd } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import SavePostDropDown from "./SavePostDropDown";
 const ForYou = () => {
   const FeedList = useSelector((state) => state.Feed.value);
   console.log(FeedList);
@@ -24,10 +24,10 @@ const ForYou = () => {
               </div>
               <div className="flex">
                 <p className="ml-3 w-[60%] text-left">{e.Tags[0]}</p>
-                <div className="flex space-x-2 w-[50%]">
-                  <NavLink><MdOutlineBookmarkAdd /></NavLink>
-                  <NavLink><BsEmojiExpressionless /></NavLink>
-                  <NavLink><BsThreeDots /></NavLink>       
+                <div className="flex space-x-2 w-[50%] h-10">
+                  <div><SavePostDropDown/></div>
+                  <div><BsEmojiExpressionless /></div>
+                  <div><BsThreeDots /></div>       
                 </div>
               </div>
               <hr />

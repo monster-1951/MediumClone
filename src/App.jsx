@@ -12,13 +12,64 @@ import StaffPicks from "./COMPONENTS/StaffPicks";
 import ForYou from "./COMPONENTS/ForYou";
 import DeletePost from "./COMPONENTS/DeletePost";
 import Body from "./COMPONENTS/Body"
-
+import Library from "./COMPONENTS/Library";
+import YourLists from "./COMPONENTS/YourLists";
+import CreateNewList from "./COMPONENTS/CreateNewList";
+import DeleteList from "./COMPONENTS/DeleteList";
 function App() {
   const [DelThisPost, setDelThisPost] = useState(0)
   const [post,setPost] = useState({});
   const router = createBrowserRouter([
     {
       path:"/",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"CreateNewList",
+      element:<><CreateNewList/></>
+    },
+    {
+      path:"/Recommendation",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"/Following",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"/Productivity",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"/RelationShips",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"/Politics",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"/Mindfullness",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"/SocialMedia",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"/LeaderShip",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"/Marketing",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"/History",
+      element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"/WebDevelopment",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
@@ -32,6 +83,18 @@ function App() {
     {
       path:"/Publish",
       element:<><Publish/></>
+    },
+    {
+      path:"/Library",
+      element:<><Navbar/><Library/></>
+    },
+    {
+      path:"/Library/YourLists",
+      element:<><Navbar/><YourLists/></>
+    },
+    {
+      path:"/Library/YourLists/DeleteList",
+      element:<><Navbar/><YourLists/><DeleteList/></>
     },
     {
       path:"/Stories/Drafts",
