@@ -107,11 +107,21 @@ export const feedSlice = createSlice({
       ],
   },
   reducers: {
-    
+    FetchThePostFromFeed: (state,action) =>{
+      let Edits
+      state.value.map((i) => {
+         if(i.id==action.payload){
+          Edits = {Heading:i.Title,Data:i.Body}
+          console.log(Edits);
+           return {Edits};
+         }
+      }
+      )
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const {  } = feedSlice.actions
+export const { FetchThePostFromFeed } = feedSlice.actions
 
 export default feedSlice.reducer

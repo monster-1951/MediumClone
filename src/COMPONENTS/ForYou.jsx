@@ -10,7 +10,7 @@ const ForYou = () => {
   return (
     <>
       <div>
-        {FeedList.map((e) => {
+        {FeedList.map((e,i) => {
           return (
             <div key={e.id} className="p-3 grid order-2 gap-y-3">
               <div className="flex justify-between">
@@ -25,7 +25,7 @@ const ForYou = () => {
               <div className="flex">
                 <p className="ml-3 w-[60%] text-left">{e.Tags[0]}</p>
                 <div className="flex space-x-2 w-[50%] h-10">
-                  <div><SavePostDropDown/></div>
+                  <div><SavePostDropDown postNum={e.id}/></div>
                   <div><BsEmojiExpressionless /></div>
                   <div><BsThreeDots /></div>       
                 </div>

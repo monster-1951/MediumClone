@@ -97,63 +97,89 @@ const StaffPicks = () => {
           <div className="mt-2">
             <h3 className="font-semibold">Who to follow</h3>
             <NavLink>
-              <div>
-                <div className="grid grid-cols-3">
-                <img src="" alt="" className="row-span-2"/>
-                <span className="font-bold">Theodore John.S</span>
-                <button className="border-2 border-solid rounded-full p-1 w-20 border-black row-span-2">
-                  Follow
-                </button>
+              <div className="flex p-3">
+                <div className="flex flex-col w-11/12">
+                  <div className="flex">
+                    <img src="" alt="" className="row-span-2" />
+                    <span className="font-bold">Theodore John.S</span>
+                  </div>
+                  <div className="w-11/12">
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Nesciunt, suscipit.
+                    </p>
+                  </div>
                 </div>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Nesciunt, suscipit.
-                </p>
+                <div className="flex flex-col justify-center">
+                  <button className="border-2 border-solid rounded-full p-1 w-20 border-black row-span-2">
+                    Follow
+                  </button>
+                </div>
               </div>
             </NavLink>
             <NavLink>
-              <div>
-                <div className="grid grid-cols-3">
-                <img src="" alt="" className="row-span-2"/>
-                <span className="font-bold">Will Lockett</span>
-                <button className="border-2 border-solid rounded-full p-1 w-20 border-black row-span-2">
-                  Follow
-                </button>
+            <div className="flex p-3">
+                <div className="flex flex-col w-11/12">
+                  <div className="flex">
+                    <img src="" alt="" className="row-span-2" />
+                    <span className="font-bold">Will Lockett</span>
+                  </div>
+                  <div className="w-11/12">
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Nesciunt, suscipit.
+                    </p>
+                  </div>
                 </div>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Nesciunt, suscipit.
-                </p>
+                <div className="flex flex-col justify-center">
+                  <button className="border-2 border-solid rounded-full p-1 w-20 border-black row-span-2">
+                    Follow
+                  </button>
+                </div>
               </div>
             </NavLink>
             <NavLink>
-              <div>
-                <div className="grid grid-cols-3">
-                <img src="" alt="" className="row-span-2"/>
-                <span className="font-bold">Josef Cruz</span>
-                <button className="border-2 border-solid rounded-full p-1 w-20 border-black row-span-2">
-                  Follow
-                </button>
+            <div className="flex p-3">
+                <div className="flex flex-col w-11/12">
+                  <div className="flex">
+                    <img src="" alt="" className="row-span-2" />
+                    <span className="font-bold">Josef Cruz</span>
+                  </div>
+                  <div className="w-11/12">
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Nesciunt, suscipit.
+                    </p>
+                  </div>
                 </div>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Nesciunt, suscipit.
-                </p>
+                <div className="flex flex-col justify-center">
+                  <button className="border-2 border-solid rounded-full p-1 w-20 border-black row-span-2">
+                    Follow
+                  </button>
+                </div>
               </div>
             </NavLink>
-            <NavLink className="font-semibold text-green-700">See more suggestions</NavLink>
+            <NavLink className="font-semibold text-green-700 p-3">
+              See more suggestions
+            </NavLink>
           </div>
         </section>
         <section className="space-y-3">
           <div className="space-y-3 mt-6">
             <h3 className="font-semibold">Recently saved</h3>
             <img src="" alt="" />
-            <span className="font-semibold text-sm">Danusha Navod in Bits and Pieces</span>
+            <span className="font-semibold text-sm">
+              Danusha Navod in Bits and Pieces
+            </span>
             <NavLink>
-              <p className="font-bold">7 Node.js Design Patterns Every Developer Should know</p>
+              <p className="font-bold">
+                7 Node.js Design Patterns Every Developer Should know
+              </p>
             </NavLink>
             <p>Feb 7,2024 . 10 min read</p>
-            <NavLink className="text-green-700 font-semibold">See all (1)</NavLink>
+            <NavLink className="text-green-700 font-semibold">
+              See all (1)
+            </NavLink>
           </div>
         </section>
         <footer className="mt-6 text-gray-95000">
