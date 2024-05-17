@@ -108,7 +108,9 @@ const CurrentList = () => {
                       </p>
                     </div>
                     <div id="PostImage" className="w-40">
+
                       <img src={"/MediumClone"+e.PreviewImage} alt="" />
+
                     </div>
                   </div>
                   <div id="PostResponses" className="flex p-3">

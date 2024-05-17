@@ -97,11 +97,17 @@ function App() {
       element:<><Navbar/><YourLists/></>
     },
     {
+
       path:"/MediumClone/Library/YourLists/CurrentList",
       element:<><Navbar/><CurrentList/></>
     },
     {
       path:"/MediumClone/Library/YourLists/DeleteList",
+      element:<><Navbar/><CurrentList/></>
+    },
+    {
+      path:"/MediumClone/Library/YourLists/DeleteList",
+
       element:<><Navbar/><YourLists/><DeleteList/></>
     },
     {
