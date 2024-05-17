@@ -33,7 +33,7 @@ export const listsSlice = createSlice({
      console.log(post,listofIds);
      listofIds.forEach(id => {
       (state.value).forEach((list) => {
-        if (list.Id==id && !(list.Posts.includes(post))) {
+        if (list.Id==id && (!list.Posts.includes(action.payload.post[0]))) {
           list.Posts.push(post)
         }
       })

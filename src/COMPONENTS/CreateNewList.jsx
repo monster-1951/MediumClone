@@ -6,6 +6,8 @@ import { DeleteThisPost } from "../REDUX/Drafts/DraftSlice";
 import { current, nanoid } from "@reduxjs/toolkit";
 import { AddToLists } from "../REDUX/YourLists/ListsSlice";
 const CreateNewList = () => {
+  const Months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+  const date = new Date();
   const id = nanoid();
   const dispatch = useDispatch();
   const [listName, setlistName] = useState("");
@@ -22,6 +24,7 @@ const CreateNewList = () => {
       Privacy: PrivacyRef.current.checked,
       Posts: [],
       Id: id,
+      CreatedOn:`${Months[date.getMonth()]} ${date.getDate()},${date.getFullYear()}`
     });
   };
 

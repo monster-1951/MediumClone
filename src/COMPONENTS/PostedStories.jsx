@@ -69,7 +69,7 @@ const PostedStories = () => {
                 return (
                   <div
                     key={e.id}
-                    className="w-full text-left p-3 space-y-3 font-light h-48"
+                    className="w-full text-left p-3 space-y-3 font-light h-fit"
                   >
                     <div className="flex space-x-3">
                       <div>

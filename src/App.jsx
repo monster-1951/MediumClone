@@ -1,4 +1,4 @@
-import { useState ,useEffect} from "react";
+import { useState ,useEffect, useContext} from "react";
 import "./App.css";
 import {createBrowserRouter,RouterProvider } from "react-router-dom";
 import Navbar from "./COMPONENTS/Navbar";
@@ -6,7 +6,7 @@ import Categories from "./COMPONENTS/Categories";
 import WriteArticle from "./COMPONENTS/WriteArticle";
 import Stories from "./COMPONENTS/Stories";
 import Publish from "./COMPONENTS/Publish";
-import {data2,postToBeDeleted} from './CONTEXT/context'
+import {data2,postToBeDeleted,indexOfList} from './CONTEXT/context'
 import PostedStories from "./COMPONENTS/PostedStories";
 import StaffPicks from "./COMPONENTS/StaffPicks";
 import ForYou from "./COMPONENTS/ForYou";
@@ -16,9 +16,13 @@ import Library from "./COMPONENTS/Library";
 import YourLists from "./COMPONENTS/YourLists";
 import CreateNewList from "./COMPONENTS/CreateNewList";
 import DeleteList from "./COMPONENTS/DeleteList";
+import CurrentList from "./COMPONENTS/CurrentList";
+import { useSelector } from "react-redux";
 function App() {
+  const Listss = useSelector(state=>state.Lists.value)
   const [DelThisPost, setDelThisPost] = useState(0)
   const [post,setPost] = useState({});
+  const [index,setIndex] = useState(0);
   const router = createBrowserRouter([
     {
       path:"/",
@@ -93,6 +97,10 @@ function App() {
       element:<><Navbar/><YourLists/></>
     },
     {
+      path:"/Library/YourLists/CurrentList",
+      element:<><Navbar/><CurrentList/></>
+    },
+    {
       path:"/Library/YourLists/DeleteList",
       element:<><Navbar/><YourLists/><DeleteList/></>
     },
@@ -110,11 +118,13 @@ function App() {
     },
   ])
   return (
+    <indexOfList.Provider value={{index,setIndex}}>
     <postToBeDeleted.Provider value={{DelThisPost,setDelThisPost}}>
     <data2.Provider value={{post,setPost}}>
       <RouterProvider router={router}></RouterProvider>  
     </data2.Provider>
     </postToBeDeleted.Provider>
+    </indexOfList.Provider>
   );
 }
 

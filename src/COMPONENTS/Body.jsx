@@ -15,9 +15,9 @@ const Body = () => {
     // setblogs([{}])
   return (
     <>
-    <div className={`lg:flex lg:h-[1200px]`}>
+    <div className={`lg:flex`}>
     <div className={`lg:w-3/5 overflow-y-auto `}><ForYou/></div>
-    <div className='lg:w-2/5 sticky top-0 max-h-[1269px] -z-10' ref={StfpcksRef}><StaffPicks/></div>
+    <div className='lg:w-2/5 sticky top-0 h-full -z-10' ref={StfpcksRef}><StaffPicks/></div>
     </div>
     </>
   )
