@@ -20,8 +20,8 @@ const ProfileDropDown = () => {
         <div className="shadow-2xl rounded-sm bg-white sticky">
           <ul className="p-3 space-y-3 flex flex-col">
             <NavLink className="space-x-3 flexp-2"><FiUser className="inline" /><span>Profile</span></NavLink>
-            <NavLink to="/Library/YourLists" className="space-x-3 flexp-2"><BsBookmarks className="inline"/><span>Library</span></NavLink>
-            <NavLink to="/Stories/Drafts" className="space-x-3 flexp-2"><RiArticleLine className="inline" /><span>Stories</span></NavLink>
+            <NavLink to="/MediumClone/Library/YourLists" className="space-x-3 flexp-2"><BsBookmarks className="inline"/><span>Library</span></NavLink>
+            <NavLink to="/MediumClone/Stories/Drafts" className="space-x-3 flexp-2"><RiArticleLine className="inline" /><span>Stories</span></NavLink>
           </ul>
         </div>
       )}

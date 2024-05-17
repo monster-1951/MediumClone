@@ -10,7 +10,7 @@ const Library = () => {
             Your library
           </p>
           <div className="flex space-x-3 p-2">
-            <NavLink to="/CreateNewList" className="h-1/2">
+            <NavLink to="/MediumClone/CreateNewList" className="h-1/2">
               <button className="rounded-full p-2 bg-green-600 text-white">
                 New List
               </button>
@@ -22,7 +22,7 @@ const Library = () => {
             className={(e) => {
               return e.isActive ? "underline underline-offset-8" : "";
             }}
-            to="/Library/YourLists"
+            to="/MediumClone/Library/YourLists"
           >
             Your lists
           </NavLink>
@@ -30,7 +30,7 @@ const Library = () => {
             className={(e) => {
               return e.isActive ? "underline underline-offset-8" : "";
             }}
-            to="/Library/SavedLists"
+            to="/MediumClone/Library/SavedLists"
           >
             Saved lists
           </NavLink>
@@ -38,7 +38,7 @@ const Library = () => {
             className={(e) => {
               return e.isActive ? "underline underline-offset-8" : "";
             }}
-            to="/Library/Highlights"
+            to="/MediumClone/Library/Highlights"
           >
             Highlights
           </NavLink>
@@ -46,7 +46,7 @@ const Library = () => {
             className={(e) => {
               return e.isActive ? "underline underline-offset-8" : "";
             }}
-            to="/Library/ReadingHistory"
+            to="/MediumClone/Library/ReadingHistory"
           >
             Reading history
           </NavLink>

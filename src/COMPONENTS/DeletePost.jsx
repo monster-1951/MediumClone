@@ -50,8 +50,8 @@ const DeletePost = () => {
           </div>
         </div>
         <div className="bg-gray-50 px-4 py-3 sm:flex sm:justify-center sm:px-6">
-          <NavLink to="/Stories/Published"><button type="button" className="mt-3 inline-flex w-full justify-center rounded-full bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto border-[1px] border-black">Cancel</button></NavLink>
-          <NavLink to="/Stories/Published">
+          <NavLink to="/MediumClone/Stories/Published"><button type="button" className="mt-3 inline-flex w-full justify-center rounded-full bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto border-[1px] border-black">Cancel</button></NavLink>
+          <NavLink to="/MediumClone/Stories/Published">
           <button type="button" className="inline-flex w-full justify-center rounded-full bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto" onClick={() => {
               dispatch(DeleteThisPost(PostNumber.DelThisPost))
             }

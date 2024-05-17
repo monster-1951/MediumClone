@@ -29,7 +29,7 @@ const Publish = () => {
       <div className="flex flex-col p-3 sm:w-full lg:w-1/2">
         <p className="text-left p-2 flex justify-between">
           <b className="font-bold">Story Preview</b>
-          <NavLink to="/Write">
+          <NavLink to="/MediumClone/Write">
             <button className="bg-black text-white p-2 rounded-lg">
               Close
             </button>
@@ -105,13 +105,13 @@ const Publish = () => {
           className="text-left bg-gray-100 p-2"
         />
         <p>
-          <NavLink to="/LearnMore">
+          <NavLink to="/MediumClone/LearnMore">
             <span className="underline">Learn more </span>
           </NavLink>
           about what happens to your post when you publish.
         </p>
         <div className="flex p-3 space-x-[10%]">
-          <NavLink to="/Stories/Published">
+          <NavLink to="/MediumClone/Stories/Published">
             <button
               className="bg-green-700 text-white rounded-full p-2 text-xs font-bold w-[150%]"
               onClick={() => {
@@ -130,7 +130,7 @@ const Publish = () => {
               Publish now
             </button>
           </NavLink>
-          <NavLink to="/">
+          <NavLink to="/MediumClone/">
             <button className="bg-white text-gray-400 rounded-full p-2 text-xs font-bold w-[150%] ">
               Schedule for later
             </button>

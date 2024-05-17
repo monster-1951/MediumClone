@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { BsThreeDots, BsEmojiExpressionless } from "react-icons/bs";
-import { NavLink } from "react-router-dom";
 import SavePostDropDown from "./SavePostDropDown";
 const ForYou = () => {
   const FeedList = useSelector((state) => state.Feed.value);
@@ -19,7 +18,7 @@ const ForYou = () => {
                   <p className="font-serif">{e.PreviewSubtitle}</p>
                 </div>
                 <div className="border-black border-1">
-                  <img src={e.PreviewImage} alt="" className="w-40 h-32" />
+                  <img src={"/MediumClone"+e.PreviewImage} alt="" className="w-40 h-32" />
                 </div>
               </div>
               <div className="flex">

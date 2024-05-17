@@ -29,7 +29,7 @@ const Categories = () => {
         >
           <ul>
             <NavLink
-              to="/Recommendation"
+              to="/MediumClone/Recommendation"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-8" : "";
               }}
@@ -39,7 +39,7 @@ const Categories = () => {
           </ul>
           <ul>
             <NavLink
-              to="/"
+              to="/MediumClone/"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-4" : "";
               }}
@@ -53,7 +53,7 @@ const Categories = () => {
             }}
           >
             <NavLink
-              to="/Following"
+              to="/MediumClone/Following"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-4" : "";
               }}
@@ -63,7 +63,7 @@ const Categories = () => {
           </ul>
           <ul>
             <NavLink
-              to="/Productivity"
+              to="/MediumClone/Productivity"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-4" : "";
               }}
@@ -73,7 +73,7 @@ const Categories = () => {
           </ul>
           <ul>
             <NavLink
-              to="/RelationShips"
+              to="/MediumClone/RelationShips"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-4" : "";
               }}
@@ -83,7 +83,7 @@ const Categories = () => {
           </ul>
           <ul>
             <NavLink
-              to="/Politics"
+              to="/MediumClone/Politics"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-4" : "";
               }}
@@ -93,7 +93,7 @@ const Categories = () => {
           </ul>
           <ul>
             <NavLink
-              to="/Mindfullness"
+              to="/MediumClone/Mindfullness"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-4" : "";
               }}
@@ -103,7 +103,7 @@ const Categories = () => {
           </ul>
           <ul>
             <NavLink
-              to="/SocialMedia"
+              to="/MediumClone/SocialMedia"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-4" : "";
               }}
@@ -113,7 +113,7 @@ const Categories = () => {
           </ul>
           <ul>
             <NavLink
-              to="/LeaderShip"
+              to="/MediumClone/LeaderShip"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-4" : "";
               }}
@@ -123,7 +123,7 @@ const Categories = () => {
           </ul>
           <ul>
             <NavLink
-              to="/Marketing"
+              to="/MediumClone/Marketing"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-4" : "";
               }}
@@ -133,7 +133,7 @@ const Categories = () => {
           </ul>
           <ul>
             <NavLink
-              to="/History"
+              to="/MediumClone/History"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-4" : "";
               }}
@@ -143,7 +143,7 @@ const Categories = () => {
           </ul>
           <ul>
             <NavLink
-              to="/WebDevelopment"
+              to="/MediumClone/WebDevelopment"
               className={(e) => {
                 return e.isActive ? "underline underline-offset-4" : "";
               }}

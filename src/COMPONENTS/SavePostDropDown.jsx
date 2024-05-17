@@ -61,14 +61,14 @@ const SavePostDropDown = ({ postNum }) => {
       {isOpen && (
         <div className="shadow-2xl rounded-sm bg-white sticky w-72 p-3">
           <div
-            key={"svGVVHXlj-5uYubk4mIE_"}
+            key={"CNQ2BBdxY6gn0aSJ_AtwN"}
             className="flex justify-between p-3"
           >
             <div className="flex space-x-3">
               <input
                 type="checkbox"
                 name=""
-                id="svGVVHXlj-5uYubk4mIE_"
+                id="CNQ2BBdxY6gn0aSJ_AtwN"
                 onChange={handleCheckbox}
               />
               <p className="font-semibold">Reading list</p>
@@ -94,7 +94,7 @@ const SavePostDropDown = ({ postNum }) => {
               </div>
             );
           })}
-          <NavLink to="/CreateNewList">
+          <NavLink to="/MediumClone/CreateNewList">
             <p className="mt-3 text-left text-green-800 font-semibold hover:text-black">
               Create new list
             </p>

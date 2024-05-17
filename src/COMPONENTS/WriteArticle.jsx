@@ -33,12 +33,12 @@ const WriteArticle = () => {
     return (
     <>
       <nav className="flex justify-between sticky top-0 h-20 shadow-md px-2">
-        <NavLink to="/" className="flex">
+        <NavLink to="/MediumClone/" className="flex">
           <img src="MediumLogo.png" alt="" />
           <span className="p-5" ref={savingRef}>Draft in User786</span>
         </NavLink>
         <div className="flex p-5 justify-around space-x-4">
-          <NavLink to="/Publish" >
+          <NavLink to="/MediumClone/Publish" >
             <button className={someText?"bg-green-600 text-white rounded-full p-2 text-xs font-bold ":"bg-green-400 text-white rounded-full p-2 text-xs font-bold cursor-not-allowed opacity-75"} disabled={data.length<1 && heading.length<1} onClick={() => {
               // if(EditIt[0])
               dispatch(DeleteThisPost(id))

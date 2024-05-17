@@ -24,7 +24,7 @@ const PostedStories = () => {
                 Your stories
               </p>
               <div className="flex space-x-3 p-2">
-                <NavLink to="/Write" className="h-1/2">
+                <NavLink to="/MediumClone/Write" className="h-1/2">
                   <button className="rounded-full p-2 bg-green-600 text-white">
                     Write a story
                   </button>
@@ -41,7 +41,7 @@ const PostedStories = () => {
                 className={(e) => {
                   return e.isActive ? "underline underline-offset-8" : "";
                 }}
-                to="/Stories/Drafts"
+                to="/MediumClone/Stories/Drafts"
               >
                 Drafts
               </NavLink>
@@ -49,7 +49,7 @@ const PostedStories = () => {
                 className={(e) => {
                   return e.isActive ? "underline underline-offset-8" : "";
                 }}
-                to="/Stories/Published"
+                to="/MediumClone/Stories/Published"
               >
                 Published {MyPosts.length}
               </NavLink>
@@ -57,7 +57,7 @@ const PostedStories = () => {
                 className={(e) => {
                   return e.isActive ? "underline underline-offset-8" : "";
                 }}
-                to="/"
+                to="/MediumClone/"
               >
                 Responses
               </NavLink>
@@ -69,7 +69,7 @@ const PostedStories = () => {
                 return (
                   <div
                     key={e.id}
-                    className="w-full text-left p-3 space-y-3 font-light h-48"
+                    className="w-full text-left p-3 space-y-3 font-light h-fit"
                   >
                     <div className="flex space-x-3">
                       <div>
@@ -82,7 +82,7 @@ const PostedStories = () => {
                         )}
                       </div>
                       <img
-                        src={e.PreviewImage}
+                        src={"/MediumClone"+e.PreviewImage}
                         alt=""
                         className="rounded-lg w-40 h-32"
                       />

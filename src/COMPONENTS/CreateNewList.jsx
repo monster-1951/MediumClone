@@ -6,6 +6,8 @@ import { DeleteThisPost } from "../REDUX/Drafts/DraftSlice";
 import { current, nanoid } from "@reduxjs/toolkit";
 import { AddToLists } from "../REDUX/YourLists/ListsSlice";
 const CreateNewList = () => {
+  const Months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+  const date = new Date();
   const id = nanoid();
   const dispatch = useDispatch();
   const [listName, setlistName] = useState("");
@@ -22,6 +24,7 @@ const CreateNewList = () => {
       Privacy: PrivacyRef.current.checked,
       Posts: [],
       Id: id,
+      CreatedOn:`${Months[date.getMonth()]} ${date.getDate()},${date.getFullYear()}`
     });
   };
 
@@ -121,7 +124,7 @@ const CreateNewList = () => {
                 </div>
               </div>
               <div className="px-4 py-3 sm:flex sm:justify-center sm:px-6">
-                <NavLink to="/Library/YourLists">
+                <NavLink to="/MediumClone/Library/YourLists">
                   <button
                     type="button"
                     className="mt-3 inline-flex w-full justify-center rounded-full bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto border-[1px] border-black"
@@ -129,7 +132,7 @@ const CreateNewList = () => {
                     Cancel
                   </button>
                 </NavLink>
-                <NavLink to="/Library/YourLists">
+                <NavLink to="/MediumClone/Library/YourLists">
                   <button
                     type="button"
                     className="inline-flex w-full justify-center rounded-full bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 sm:ml-3 sm:w-auto"

@@ -49,9 +49,12 @@ const OptnsList = ({ListNumber}) => {
             <NavLink className="flex space-x-4 hover:text-l">
               <button>Hide responses</button>
             </NavLink>
-            {(listNum.DelThisPost!='svGVVHXlj-5uYubk4mIE_')&&<NavLink to="/Library/YourLists/DeleteList" className="flex space-x-4 text-red-700 hover:text-lg">
+            {
+            (listNum.DelThisPost!='CNQ2BBdxY6gn0aSJ_AtwN')&&
+            <NavLink to="/MediumClone/Library/YourLists/DeleteList" className="flex space-x-4 text-red-700 hover:text-lg">
               <button>Delete list</button>
-            </NavLink>}
+            </NavLink>
+            }
           </ul>
         </div>
       )}

@@ -1,4 +1,4 @@
-import { useState ,useEffect} from "react";
+import { useState ,useEffect, useContext} from "react";
 import "./App.css";
 import {createBrowserRouter,RouterProvider } from "react-router-dom";
 import Navbar from "./COMPONENTS/Navbar";
@@ -6,7 +6,7 @@ import Categories from "./COMPONENTS/Categories";
 import WriteArticle from "./COMPONENTS/WriteArticle";
 import Stories from "./COMPONENTS/Stories";
 import Publish from "./COMPONENTS/Publish";
-import {data2,postToBeDeleted} from './CONTEXT/context'
+import {data2,postToBeDeleted,indexOfList} from './CONTEXT/context'
 import PostedStories from "./COMPONENTS/PostedStories";
 import StaffPicks from "./COMPONENTS/StaffPicks";
 import ForYou from "./COMPONENTS/ForYou";
@@ -16,105 +16,115 @@ import Library from "./COMPONENTS/Library";
 import YourLists from "./COMPONENTS/YourLists";
 import CreateNewList from "./COMPONENTS/CreateNewList";
 import DeleteList from "./COMPONENTS/DeleteList";
+import CurrentList from "./COMPONENTS/CurrentList";
+import { useSelector } from "react-redux";
 function App() {
+  const Listss = useSelector(state=>state.Lists.value)
   const [DelThisPost, setDelThisPost] = useState(0)
   const [post,setPost] = useState({});
+  const [index,setIndex] = useState(0);
   const router = createBrowserRouter([
     {
-      path:"/",
+      path:"/MediumClone/",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"CreateNewList",
+      path:"/MediumClone/CreateNewList",
       element:<><CreateNewList/></>
     },
     {
-      path:"/Recommendation",
+      path:"/MediumClone/Recommendation",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/Following",
+      path:"/MediumClone/Following",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/Productivity",
+      path:"/MediumClone/Productivity",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/RelationShips",
+      path:"/MediumClone/RelationShips",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/Politics",
+      path:"/MediumClone/Politics",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/Mindfullness",
+      path:"/MediumClone/Mindfullness",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/SocialMedia",
+      path:"/MediumClone/SocialMedia",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/LeaderShip",
+      path:"/MediumClone/LeaderShip",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/Marketing",
+      path:"/MediumClone/Marketing",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/History",
+      path:"/MediumClone/History",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/WebDevelopment",
+      path:"/MediumClone/WebDevelopment",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/LearnMore",
+      path:"/MediumClone/LearnMore",
       element:<><Navbar/><Categories/><Body/></>
     },
     {
-      path:"/Write",
+      path:"/MediumClone/Write",
       element:<><WriteArticle/></>
     },
     {
-      path:"/Publish",
+      path:"/MediumClone/Publish",
       element:<><Publish/></>
     },
     {
-      path:"/Library",
+      path:"/MediumClone/Library",
       element:<><Navbar/><Library/></>
     },
     {
-      path:"/Library/YourLists",
+      path:"/MediumClone/Library/YourLists",
       element:<><Navbar/><YourLists/></>
     },
     {
-      path:"/Library/YourLists/DeleteList",
+      path:"/MediumClone/Library/YourLists/CurrentList",
+      element:<><Navbar/><CurrentList/></>
+    },
+    {
+      path:"/MediumClone/Library/YourLists/DeleteList",
       element:<><Navbar/><YourLists/><DeleteList/></>
     },
     {
-      path:"/Stories/Drafts",
+      path:"/MediumClone/Stories/Drafts",
       element:<><Navbar/><Stories/></>
     },
     {
-      path:"/Stories/Published",
+      path:"/MediumClone/Stories/Published",
       element:<><Navbar/><PostedStories/></>
     },
     {
-      path:"/Stories/Published/DeletePost",
+      path:"/MediumClone/Stories/Published/DeletePost",
       element:<><Navbar/><PostedStories/><DeletePost/></>
     },
   ])
   return (
+    <indexOfList.Provider value={{index,setIndex}}>
     <postToBeDeleted.Provider value={{DelThisPost,setDelThisPost}}>
     <data2.Provider value={{post,setPost}}>
       <RouterProvider router={router}></RouterProvider>  
     </data2.Provider>
     </postToBeDeleted.Provider>
+    </indexOfList.Provider>
   );
 }
 

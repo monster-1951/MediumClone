@@ -10,7 +10,7 @@ const Stories = () => {
           <div className="flex justify-between p-5">
             <p className="md:text-5xl text-2xl m-3 font-semibold">Your stories</p>
             <div className="flex space-x-3 p-2">
-              <NavLink to="/Write" className="h-1/2">
+              <NavLink to="/MediumClone/Write" className="h-1/2">
                 <button className="rounded-full p-2 bg-green-600 text-white">
                   Write a story
                 </button>
@@ -27,7 +27,7 @@ const Stories = () => {
               className={(e) => {
                 return e.isActive ? "underline underline-offset-8" : "";
               }}
-              to="/Stories/Drafts"
+              to="/MediumClone/Stories/Drafts"
             >
               Drafts
             </NavLink>
@@ -35,15 +35,12 @@ const Stories = () => {
               className={(e) => {
                 return e.isActive ? "underline underline-offset-8" : "";
               }}
-              to="/Stories/Published"
+              to="/MediumClone/Stories/Published"
             >
               Published
             </NavLink>
             <NavLink
-              className={(e) => {
-                return e.isActive ? "underline underline-offset-8" : "";
-              }}
-              to="/"
+              to="/MediumClone"
             >
               Responses
             </NavLink>
