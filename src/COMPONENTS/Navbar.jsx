@@ -7,23 +7,23 @@ import ProfileDropDown from "./ProfileDropDown";
 const Navbar = () => {
   return (
     <nav className=" sticky top-0 h-20 shadow-md px-4 bg-white z-10">
-      <div className="flex justify-between">
-        <div className="flex space-x-4 p-5 align-middle">
+      <div className="flex justify-between items-c">
+        <div className="flex sm:space-x-4 p-5 align-middle">
           <NavLink to="/MediumClone/">
             <img src="/MediumClone/MediumLogo.png" alt="" className="hidden sm:block"/>
           </NavLink>
-          <form className="flex space-x-4 p-3 align-middle">
+          <form className="flex sm:space-x-4 sm:p-3 align-middle">
             <label htmlFor="search">
-              <img src="/MediumClone/Search.png" alt="Search" className="w-6 h-6 mt-1 sm:hidden md:block" />
+              <img src="/MediumClone/Search.png" alt="Search" className="sm:w-6 sm:h-6 sm:mt-1 hidden md:block" />
             </label>
             <input
               type="search"
               placeholder="Search"
-              className="p-3 h-8 shadow-inner w-25 outline-none"
+              className="sm:p-3 sm:h-8 shadow-inner sm:w-25 outline-none w-20 h-8"
             />
           </form>
         </div>
-        <div className="flex mt-9 space-x-3">
+        <div className="flex mt-6 sm:mt-9 space-x-3">
           <span className="hidden md:block">
             <NavLink to="/MediumClone/Write" className="flex">
               <FaRegEdit className="mt-1" />

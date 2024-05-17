@@ -17,7 +17,7 @@ const YourLists = () => {
 
   return (
     <div className="flex">
-      <div className="sm:w-full overflow-y-auto">
+      <div className=" w-full sm:w-full overflow-y-auto">
         <Library />
         <div className="space-y-10 mt-2">
           {/* <div className=" shadow-xl bg-green-700 h-28"></div> */}

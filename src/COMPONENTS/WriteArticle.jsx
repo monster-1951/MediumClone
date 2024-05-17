@@ -34,7 +34,7 @@ const WriteArticle = () => {
     <>
       <nav className="flex justify-between sticky top-0 h-20 shadow-md px-2">
         <NavLink to="/MediumClone/" className="flex">
-          <img src="MediumLogo.png" alt="" />
+          <img src="MediumLogo.png" alt="" className="hidden sm:block"/>
           <span className="p-5" ref={savingRef}>Draft in User786</span>
         </NavLink>
         <div className="flex p-5 justify-around space-x-4">

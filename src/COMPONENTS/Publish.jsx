@@ -110,10 +110,10 @@ const Publish = () => {
           </NavLink>
           about what happens to your post when you publish.
         </p>
-        <div className="flex p-3 space-x-[10%]">
+        <div className="flex p-3 justify-around sm:justify-center sm:space-x-[10%]">
           <NavLink to="/MediumClone/Stories/Published">
             <button
-              className="bg-green-700 text-white rounded-full p-2 text-xs font-bold w-[150%]"
+              className="bg-green-700 text-white rounded-full p-2 text-xs font-bold sm:w-[150%]"
               onClick={() => {
                 dispatch(InsertToPosts({
                   Title:Postt.post.Heading,
@@ -131,7 +131,7 @@ const Publish = () => {
             </button>
           </NavLink>
           <NavLink to="/MediumClone/">
-            <button className="bg-white text-gray-400 rounded-full p-2 text-xs font-bold w-[150%] ">
+            <button className="bg-white text-gray-400 rounded-full p-2 text-xs font-bold sm:w-[150%] ">
               Schedule for later
             </button>
           </NavLink>

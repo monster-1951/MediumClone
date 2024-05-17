@@ -11,14 +11,14 @@ const ForYou = () => {
       <div>
         {FeedList.map((e,i) => {
           return (
-            <div key={e.id} className="p-3 grid order-2 gap-y-3">
+            <div key={e.id} className="p-3 grid order-2 gap-y-3 ">
               <div className="flex justify-between">
-                <div className="h-32 p-3 text-left text-xl ">
-                  <p className="font-extrabold">{e.PreviewTitle}</p>
-                  <p className="font-serif">{e.PreviewSubtitle}</p>
+                <div className="h-fit p-3 text-left text-xl ">
+                  <p className="font-extrabold text-lg">{e.PreviewTitle}</p>
+                  <p className="font-serif text-lg">{e.PreviewSubtitle}</p>
                 </div>
-                <div className="border-black border-1">
-                  <img src={"/MediumClone"+e.PreviewImage} alt="" className="w-40 h-32" />
+                <div className="border-black border-1 p-5">
+                  <img src={"/MediumClone"+e.PreviewImage} alt="" className="w-fit h-fit" />
                 </div>
               </div>
               <div className="flex">

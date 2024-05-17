@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const StaffPicks = () => {
   return (
     <>
-      <div className="flex flex-col text-left shadow-xl p-3 sm:hidden lg:block">
+      <div className="md:flex flex-col text-left shadow-xl p-3 hidden lg:block">
         <section className="p-3 space-y-3">
           <h3 className="font-semibold">Staff Picks</h3>
           <div>

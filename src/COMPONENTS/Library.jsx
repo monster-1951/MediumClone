@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Library = () => {
   return (
-    <div className="shadow-md sm:w-full">
+    <div className="shadow-md sm:w-full w-full">
       <div id="head" className="shadow-md w-full">
         <div className="flex justify-between p-5">
           <p className="md:text-5xl text-2xl font-bold text-left m-3">

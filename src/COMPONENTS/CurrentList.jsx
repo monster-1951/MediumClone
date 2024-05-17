@@ -24,16 +24,16 @@ const CurrentList = () => {
     <>
       <div id="Main" className="lg:flex lg:justify-between p-5">
         <div id="listData" className="lg:w-3/5 overflow-y-auto shadow-sm">
-          <div id="userDetails" className="flex w-full p-3 space-x-2">
+          <div id="userDetails" className="flex sm:w-full p-3 space-x-2">
             <div id="dp">
-              <UserCircleIcon className="h-full w-14" />
+              <UserCircleIcon className="h-full  w-10 sm:w-14" />
             </div>
             <div id="UnameListDate" className="w-full">
               <div id="username" className="font-semibold text-lg flex">
                 User-786
               </div>
               <div id="listData" className="flex text-sm space-x-3">
-                <p id="Date" className="w-[15%] flex">
+                <p id="Date" className="sm:w-[15%] flex">
                   {CurrentLis.CreatedOn}
                 </p>
                 <div className="flex space-x-3 w-1/2">
@@ -100,10 +100,10 @@ const CurrentList = () => {
                   </div>
                   <div id="PostData" className="flex justify-between p-3">
                     <div>
-                      <p className="font-extrabold text-2xl text-left">
+                      <p className="font-bold sm:font-extrabold sm:text-2xl text-left">
                         {e.PreviewTitle}
                       </p>
-                      <p className="text-left font-medium text-gray-500">
+                      <p className="text-left font-normal sm:font-medium text-gray-500">
                         {e.PreviewSubtitle}
                       </p>
                     </div>
@@ -126,7 +126,7 @@ const CurrentList = () => {
             })}
           </div>
         </div>
-        <div ref={profileData} id="ProfileData" className="sticky h-fit top-0 p-3 lg:block sm:hidden lg:w-1/4 shadow-sm">
+        <div ref={profileData} id="ProfileData" className="sticky h-fit top-0 p-3 md:block hidden lg:w-1/4 shadow-sm">
           <div className="space-y-3">
             <FaUserCircle />
             <p id="userName" className="text-left font-bold text-xl">user-786</p>

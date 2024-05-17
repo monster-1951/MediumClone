@@ -23,18 +23,19 @@ const PostedStories = () => {
               <p className="md:text-5xl text-2xl font-bold text-left m-3">
                 Your stories
               </p>
-              <div className="flex space-x-3 p-2">
-                <NavLink to="/MediumClone/Write" className="h-1/2">
-                  <button className="rounded-full p-2 bg-green-600 text-white">
-                    Write a story
-                  </button>
-                </NavLink>
-                <NavLink className="h-1/2">
-                  <button className="rounded-full border-black border-2 border-solid p-1.5">
-                    Import a story
-                  </button>
-                </NavLink>
-              </div>
+             <div className="sm:flex-row flex flex-col p-2">
+              <NavLink to="/MediumClone/Write" className="sm:h-1/2">
+                <button className="rounded-full p-1 sm:p-2 bg-green-600 text-white text-sm w-28">
+                  Write a story
+                </button>
+              </NavLink>
+              <NavLink className="sm:h-1/2 mt-1 sm:mt-0">
+                <button className="rounded-full p-1 border-black border-2 border-solid text-sm sm:p-1.5 w-28">
+                  Import a story
+                </button>
+              </NavLink>
+            </div>
+              
             </div>
             <nav className="flex p-2 space-x-6 ml-1">
               <NavLink
@@ -69,7 +70,7 @@ const PostedStories = () => {
                 return (
                   <div
                     key={e.id}
-                    className="w-full text-left p-3 space-y-3 font-light h-fit"
+                    className="w-screen sm:w-full text-left p-3 space-y-3 font-light h-80 sm:h-40"
                   >
                     <div className="flex space-x-3">
                       <div>
@@ -84,7 +85,7 @@ const PostedStories = () => {
                       <img
                         src={"/MediumClone"+e.PreviewImage}
                         alt=""
-                        className="rounded-lg w-40 h-32"
+                        className="rounded-lg sm:w-40 h-32"
                       />
                     </div>
 
@@ -104,7 +105,7 @@ const PostedStories = () => {
           </div>
         </div>
       </div>
-      <StaffPicks className="" />
+      <StaffPicks className="hidden sm:block" />
     </div>
   );
 };
