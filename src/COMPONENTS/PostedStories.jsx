@@ -16,7 +16,7 @@ const PostedStories = () => {
 
   return (
     <div className="lg:flex w-full">
-      <div className="flex justify-between space-x-2 lg:w-full">
+      <div className="flex justify-between space-x-2">
         <div className="shadow-md sm:w-full">
           <div id="head" className="shadow-md w-full">
             <div className="flex justify-between p-5 w-full">
@@ -72,7 +72,7 @@ const PostedStories = () => {
                     className="w-80 sm:w-full text-left p-3 space-y-3 font-light h-80 sm:h-40"
                   >
                     <div className="flex space-x-3">
-                      <div className="w-11/12 ">
+                      <div className="w-11/12">
                         <div className="sm:text-xl font-extrabold">
                           {e.PreviewTitle}
                         </div>
@@ -86,7 +86,7 @@ const PostedStories = () => {
                         )}
                       </div>
                       <img
-                        src={e.PreviewImage}
+                        src={"/MediumClone" + e.PreviewImage}
                         alt=""
                         className="bg-slate-800 h-40 w-52 rounded-xl sm:w-40 "
                       />

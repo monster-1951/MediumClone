@@ -25,7 +25,7 @@ const YourLists = () => {
             return (
               <div
                 key={e.Id}
-                className="flex justify-between bg-gray-100 rounded-xl h-fit"
+                className="flex justify-between bg-gray-100 rounded-xl h-40"
               >
                 <div className="w-3/5 p-3 flex flex-col space-y-[7%]">
                   <div className="flex space-x-2">
