@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-import ReactQuill from "react-quill";
 import TagsInput from "react-tagsinput";
 import { NavLink } from "react-router-dom";
 import { data2 } from "../CONTEXT/context";

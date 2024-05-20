@@ -67,7 +67,7 @@ const CurrentList = () => {
 
               <div
                 id="Desc"
-                className="px-3 flex justify-between mt-8 border-l-[3px] border-black"
+                className="px-3 flex justify-between mt-8 border-l-[3px] border-black space-x-6"
               >
                 {/* If we set the input value it should be saved in the list data */}
                 <input
@@ -79,9 +79,9 @@ const CurrentList = () => {
                     setDescription(e.target.value);
                   }}
                   placeholder="Write a brief description"
-                  className="mt- bg-gray-200 p-2 w-9/12 rounded-md"
+                  className="bg-gray-200 p-2 w-10/12 sm:w-9/12 rounded-md"
                 />
-                <div className="flex justify-evenly w-3/12">
+                <div className="flex flex-wrap sm:justify-evenly sm:w-3/12 justify-center">
                   <button className="font-semibold text-sm">Cancel</button>
                   <button className="font-semibold text-sm text-green-600">
                     Done

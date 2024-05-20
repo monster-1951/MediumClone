@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { postToBeDeleted } from "../CONTEXT/context";
-import { DeleteThisPost } from "../REDUX/Drafts/DraftSlice";
-import { current, nanoid } from "@reduxjs/toolkit";
+import { nanoid } from "@reduxjs/toolkit";
 import { AddToLists } from "../REDUX/YourLists/ListsSlice";
 const CreateNewList = () => {
   const Months = ["January","February","March","April","May","June","July","August","September","October","November","December"]

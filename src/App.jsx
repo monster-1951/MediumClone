@@ -18,15 +18,36 @@ import CreateNewList from "./COMPONENTS/CreateNewList";
 import DeleteList from "./COMPONENTS/DeleteList";
 import CurrentList from "./COMPONENTS/CurrentList";
 import { useSelector } from "react-redux";
+import Profile from "./COMPONENTS/Profile";
+import Lists from "./COMPONENTS/Lists";
+import About from "./COMPONENTS/About";
+import EditProfile from "./COMPONENTS/EditProfile";
 function App() {
   const Listss = useSelector(state=>state.Lists.value)
   const [DelThisPost, setDelThisPost] = useState(0)
   const [post,setPost] = useState({});
   const [index,setIndex] = useState(0);
+  const [statuus, setstatuus] = useState("")
   const router = createBrowserRouter([
     {
       path:"/MediumClone/",
       element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"/MediumClone/ProfilePage/Home",
+      element:<><Navbar/><Profile/></>
+    },
+    {
+      path:"/MediumClone/ProfilePage/Lists",
+      element:<><Navbar/><Lists/></>
+    },
+    {
+      path:"/MediumClone/ProfilePage/About",
+      element:<><Navbar/><About/></>
+    },
+    {
+      path:"/MediumClone/ProfilePage/EditProfile",
+      element:<><EditProfile/></>
     },
     {
       path:"/MediumClone/CreateNewList",

@@ -1,25 +1,20 @@
-import React, { useContext, useEffect } from "react";
-import Library from "./Library";
-import { useSelector } from "react-redux";
-import { FaLock, FaUnlock, FaUserCircle } from "react-icons/fa";
-import OptnsList from "./OptnsList";
-import StaffPicks from "./StaffPicks";
+import React,{useContext} from 'react'
 import { NavLink } from "react-router-dom";
+import {  FaLock, FaUnlock,FaUserCircle } from "react-icons/fa";
+import OptnsList from "./OptnsList";
+import { useSelector } from 'react-redux';
 import { indexOfList } from "../CONTEXT/context";
-// import Body from "/Users/SHIVA SHANKAR/Desktop/Medium Clone/Images";
-const YourLists = () => {
-  const ListInd = useContext(indexOfList);
-  const Lists = useSelector((state) => state.Lists.value);
-  useEffect(() => {
-    console.log(ListInd);
-    console.log(Lists);
-  });
-
+import ProfileHead from './ProfileHead';
+import ProfileData from './ProfileData';
+const Lists = () => {
+    const ListInd = useContext(indexOfList);
+    const Lists = useSelector((state) => state.Lists.value);
   return (
+
     <div className="flex">
-      <div className=" w-full sm:w-full overflow-y-auto">
-        <Library />
-        <div className="space-y-10 mt-2">
+      <div id="Main" className="lg:w-9/12 w-full v">
+       <ProfileHead/>
+        <div id='Lists' className="space-y-10 mt-2">
           {/* <div className=" shadow-xl bg-green-700 h-28"></div> */}
           {Lists.map((e, i) => {
             return (
@@ -83,9 +78,9 @@ const YourLists = () => {
           })}
         </div>
       </div>
-      <StaffPicks className="sticky h-screen top-0" />
+      <ProfileData/>
     </div>
-  );
-};
+  )
+}
 
-export default YourLists;
+export default Lists
