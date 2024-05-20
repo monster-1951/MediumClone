@@ -13,11 +13,11 @@ const ForYou = () => {
           return (
             <div key={e.id} className="p-3 flex flex-col">
               <div className="flex justify-between full">
-                <div className="h-fit p-3 text-left text-xl ">
-                  <p className="font-extrabold text-lg">{e.PreviewTitle}</p>
-                  <p className="font-serif text-lg">{e.PreviewSubtitle}</p>
+                <div className="h-fit p-3 text-left text-xl w-11/12">
+                  <p className="font-bold sm:font-extrabold text-lg">{e.PreviewTitle}</p>
+                  <p className="font-serif text-sm">{e.PreviewSubtitle}</p>
                 </div>
-                <div className="border-black border-1 p-5">
+                <div className="border-black border-1 p-5 w-6/12">
                   <img src={"/MediumClone"+e.PreviewImage} alt="" className="w-fit h-fit" />
                 </div>
               </div>

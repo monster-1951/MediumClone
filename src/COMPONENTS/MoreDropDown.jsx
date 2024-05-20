@@ -22,7 +22,7 @@ function MoreDropDown({postNumber}) {
         console.log(DeleteThisPost);
       }
       
-      } className='mr-36'>
+      } className='sm:mr-36'>
       <BsThreeDots />
       </button>
       {isOpen && (

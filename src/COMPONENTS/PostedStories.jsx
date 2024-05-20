@@ -19,25 +19,24 @@ const PostedStories = () => {
       <div className="flex justify-between space-x-2">
         <div className="shadow-md sm:w-full">
           <div id="head" className="shadow-md w-full">
-            <div className="flex justify-between p-5">
+            <div className="flex justify-between p-5 w-full">
               <p className="md:text-5xl text-2xl font-bold text-left m-3">
                 Your stories
               </p>
-             <div className="sm:flex-row flex flex-col p-2">
-              <NavLink to="/MediumClone/Write" className="sm:h-1/2">
-                <button className="rounded-full p-1 sm:p-2 bg-green-600 text-white text-sm w-28">
-                  Write a story
-                </button>
-              </NavLink>
-              <NavLink className="sm:h-1/2 mt-1 sm:mt-0">
-                <button className="rounded-full p-1 border-black border-2 border-solid text-sm sm:p-1.5 w-28">
-                  Import a story
-                </button>
-              </NavLink>
+              <div className="sm:flex-row flex flex-col p-2 sm:space-x-2">
+                <NavLink to="/MediumClone/Write" className="sm:h-1/2">
+                  <button className="rounded-full p-1 sm:p-2 bg-green-600 text-white text-sm w-28">
+                    Write a story
+                  </button>
+                </NavLink>
+                <NavLink className="sm:h-1/2 mt-1 sm:mt-0">
+                  <button className="rounded-full p-1 border-black border-2 border-solid text-sm sm:p-1.5 w-28">
+                    Import a story
+                  </button>
+                </NavLink>
+              </div>
             </div>
-              
-            </div>
-            <nav className="flex p-2 space-x-6 ml-1">
+            <nav className="flex p-2 space-x-6 ml-1 w-full">
               <NavLink
                 className={(e) => {
                   return e.isActive ? "underline underline-offset-8" : "";
@@ -64,28 +63,32 @@ const PostedStories = () => {
               </NavLink>
             </nav>
           </div>
-          <div className={`shadow-sm pb-5`}>
+          <div className={`shadow-sm pb-5 text-wrap`}>
             <div className={`grid grid-cols space-y-10 mt-5`}>
               {MyPosts.map((e, i) => {
                 return (
                   <div
                     key={e.id}
-                    className="w-screen sm:w-full text-left p-3 space-y-3 font-light h-80 sm:h-40"
+                    className="w-80 sm:w-full text-left p-3 space-y-3 font-light h-80 sm:h-40"
                   >
                     <div className="flex space-x-3">
-                      <div>
-                        <div className="text-xl font-extrabold">
+                      <div className="w-11/12">
+                        <div className="sm:text-xl font-extrabold">
                           {e.PreviewTitle}
                         </div>
-                        <h3 className="">{e.PreviewSubtitle}</h3>
+                        <h3 className="text-sm">{e.PreviewSubtitle}</h3>
                         {e.PreviewSubtitle !== e.Body && (
-                          <p className="">{e.Body}</p>
+                          <p className="">
+                            {e.Body.length > 95
+                              ? e.Body.slice(0, 95) + "..."
+                              : e.Body}
+                          </p>
                         )}
                       </div>
                       <img
-                        src={"/MediumClone"+e.PreviewImage}
+                        src={"/MediumClone" + e.PreviewImage}
                         alt=""
-                        className="rounded-lg sm:w-40 h-32"
+                        className="bg-slate-800 h-40 w-52 rounded-xl sm:w-40 "
                       />
                     </div>
 
