@@ -10,7 +10,7 @@ const Navbar = () => {
       <div className="flex justify-between">
         <div className="flex space-x-4 p-5 align-middle ">
           <NavLink to="/MediumClone/" className="mt-2">
-            <img src="/MediumClone/MediumLogo.png" alt="" className=" sm:block w-6 h-6 " />
+            <img src="/MediumClone/MediumLogo.png" alt="Home" className=" sm:block w-6 h-6 font-extrabold" />
           </NavLink>
           <form className="flex sm:space-x-4 sm:p-3 align-middle">
             <label htmlFor="search">
@@ -32,7 +32,7 @@ const Navbar = () => {
           </span>
           <div className="flex space-x-3">
           <CiBellOn className="mt-1" />
-          <ProfileDropDown className="mt-1" />
+          <ProfileDropDown className="" />
           </div>
         </div>
       </div>

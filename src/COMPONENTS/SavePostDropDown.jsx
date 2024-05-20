@@ -59,16 +59,16 @@ const SavePostDropDown = ({ postNum }) => {
         {!saved ? <IoBookmarkOutline /> : <IoBookmarkSharp />}
       </button>
       {isOpen && (
-        <div className="shadow-2xl rounded-sm bg-white sticky w-72 p-3">
+        <div className="shadow-2xl rounded-sm bg-white sticky w-60 p-3">
           <div
-            key={"CNQ2BBdxY6gn0aSJ_AtwN"}
+            key={"ReadingList"}
             className="flex justify-between p-3"
           >
             <div className="flex space-x-3">
               <input
                 type="checkbox"
                 name=""
-                id="CNQ2BBdxY6gn0aSJ_AtwN"
+                id="ReadingList"
                 onChange={handleCheckbox}
               />
               <p className="font-semibold">Reading list</p>

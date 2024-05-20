@@ -13,11 +13,11 @@ const ProfileDropDown = () => {
 
   return (
     <div className="flex flex-col ">
-      <button onClick={toggleOpen} className="flex justify-end md:w-28">
+      <button onClick={toggleOpen} className="flex justify-end sm:w-28">
         <FaUserCircle className="mt-1 mr-2" />
       </button>
       {isOpen && (
-        <div className="shadow-2xl rounded-sm bg-white sticky">
+        <div className="shadow-2xl rounded-sm bg-white sticky w-32">
           <ul className="p-3 space-y-3 flex flex-col">
             <NavLink className="space-x-3 flexp-2"><FiUser className="inline" /><span>Profile</span></NavLink>
             <NavLink to="/MediumClone/Library/YourLists" className="space-x-3 flexp-2"><BsBookmarks className="inline"/><span>Library</span></NavLink>

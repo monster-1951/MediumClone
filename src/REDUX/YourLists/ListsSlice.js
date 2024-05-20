@@ -4,7 +4,7 @@ import { act } from 'react';
 export const listsSlice = createSlice({
   name: 'lists',
   initialState: {
-    value: localStorage.getItem("Lists")===null ? []:JSON.parse(localStorage.getItem("Lists")),
+    value: localStorage.getItem("Lists")===null ? [{Lname:'Reading list',Ldesc:'',Privacy:true, Posts:[],Id:"ReadingList",createdOn:"May 17,2024"}]:[{Lname:'Reading list',Ldesc:'',Privacy:true, Posts:[],Id:"ReadingList",createdOn:"May 17,2024"},...JSON.parse(localStorage.getItem("Lists"))],
   },
   reducers: {
     AddToLists: (state, action) => {

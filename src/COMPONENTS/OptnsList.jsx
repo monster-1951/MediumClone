@@ -2,9 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import { postToBeDeleted } from "../CONTEXT/context";
-
-
+import { DeleteFromLists } from "../REDUX/YourLists/ListsSlice";
+import { useDispatch } from "react-redux";
 const OptnsList = ({ListNumber}) => {
+  const dispatch = useDispatch()
   const [isOpen, setisOpen] = useState(false);
   const listNum = useContext(postToBeDeleted);
   const ListNum = ListNumber;
@@ -50,7 +51,7 @@ const OptnsList = ({ListNumber}) => {
               <button>Hide responses</button>
             </NavLink>
             {
-            (listNum.DelThisPost!='CNQ2BBdxY6gn0aSJ_AtwN')&&
+            (listNum.DelThisPost!='ReadingList')&&
             <NavLink to="/MediumClone/Library/YourLists/DeleteList" className="flex space-x-4 text-red-700 hover:text-lg">
               <button>Delete list</button>
             </NavLink>
