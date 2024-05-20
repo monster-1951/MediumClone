@@ -6,11 +6,11 @@ import { FaUserCircle } from "react-icons/fa";
 import ProfileDropDown from "./ProfileDropDown";
 const Navbar = () => {
   return (
-    <nav className=" sticky top-0 h-20 shadow-md px-4 bg-white z-10">
-      <div className="flex justify-between items-c">
-        <div className="flex sm:space-x-4 p-5 align-middle">
-          <NavLink to="/MediumClone/">
-            <img src="/MediumClone/MediumLogo.png" alt="" className="hidden sm:block"/>
+    <nav className=" sticky top-0 h-20 shadow-md px-4 bg-white z-10 w-s">
+      <div className="flex justify-between">
+        <div className="flex space-x-4 p-5 align-middle ">
+          <NavLink to="/MediumClone/" className="mt-2">
+            <img src="/MediumClone/MediumLogo.png" alt="" className=" sm:block w-6 h-6 " />
           </NavLink>
           <form className="flex sm:space-x-4 sm:p-3 align-middle">
             <label htmlFor="search">

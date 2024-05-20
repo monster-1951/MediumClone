@@ -8,11 +8,11 @@ const ForYou = () => {
 
   return (
     <>
-      <div>
+      <div className="w-full">
         {FeedList.map((e,i) => {
           return (
-            <div key={e.id} className="p-3 grid order-2 gap-y-3 ">
-              <div className="flex justify-between">
+            <div key={e.id} className="p-3 flex flex-col">
+              <div className="flex justify-between full">
                 <div className="h-fit p-3 text-left text-xl ">
                   <p className="font-extrabold text-lg">{e.PreviewTitle}</p>
                   <p className="font-serif text-lg">{e.PreviewSubtitle}</p>
@@ -21,10 +21,10 @@ const ForYou = () => {
                   <img src={"/MediumClone"+e.PreviewImage} alt="" className="w-fit h-fit" />
                 </div>
               </div>
-              <div className="flex">
-                <p className="ml-3 w-[60%] text-left">{e.Tags[0]}</p>
-                <div className="flex space-x-2 w-[50%] h-10">
-                  <div><SavePostDropDown postNum={e.id}/></div>
+              <div className="flex justify-between">
+                <p className="ml-3 sm:w-[60%] text-left">{e.Tags[0]}</p>
+                <div className="flex space-x-3 sm:w-[50%] sm:h-10">
+                  <div className=""><SavePostDropDown postNum={e.id} className=""/></div>
                   <div><BsEmojiExpressionless /></div>
                   <div><BsThreeDots /></div>       
                 </div>

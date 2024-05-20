@@ -54,7 +54,7 @@ const SavePostDropDown = ({ postNum }) => {
           toggleOpen();
           console.log(ThisPost);
         }}
-        className="flex justify-end w-72"
+        className="flex justify-end sm:w-72"
       >
         {!saved ? <IoBookmarkOutline /> : <IoBookmarkSharp />}
       </button>
