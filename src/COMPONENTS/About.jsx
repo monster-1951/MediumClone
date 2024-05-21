@@ -19,7 +19,7 @@ const About = () => {
         <ProfileHead />
         {!clicked ? (
           <div>
-            {(ProfData.About == null)||(ProfData.About.length==0) ? (
+            {(about.length==0) ? (
               !clicked && (
                 <div  className="flex justify-center p-5 w-11/12">
                     <div className="bg-gray-50 h-96 w-screen rounded-xl flex flex-col  justify-center space-y-6 p-5">

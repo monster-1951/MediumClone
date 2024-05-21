@@ -22,6 +22,7 @@ import Profile from "./COMPONENTS/Profile";
 import Lists from "./COMPONENTS/Lists";
 import About from "./COMPONENTS/About";
 import EditProfile from "./COMPONENTS/EditProfile";
+import Post from "./COMPONENTS/Post";
 function App() {
   const Listss = useSelector(state=>state.Lists.value)
   const [DelThisPost, setDelThisPost] = useState(0)
@@ -134,6 +135,10 @@ function App() {
     {
       path:"/MediumClone/Stories/Published",
       element:<><Navbar/><PostedStories/></>
+    },
+    {
+      path:`/MediumClone/Stories/Post/:id`,
+      element:<><Navbar/><Post/></>
     },
     {
       path:"/MediumClone/Stories/Published/DeletePost",

@@ -9,6 +9,7 @@ import { indexOfList } from "../CONTEXT/context";
 // import Body from "/Users/SHIVA SHANKAR/Desktop/Medium Clone/Images";
 const YourLists = () => {
   const ListInd = useContext(indexOfList);
+  const UserData = useSelector(state => state.ProfileData.value)
   const Lists = useSelector((state) => state.Lists.value);
   useEffect(() => {
     console.log(ListInd);
@@ -29,8 +30,15 @@ const YourLists = () => {
               >
                 <div className="w-3/5 p-3 flex flex-col space-y-[7%]">
                   <div className="flex space-x-2">
-                    <FaUserCircle className="h-7" />
-                    <p className="font-semibold">user-786</p>
+                  {
+                      <img src={UserData.DP} alt="" className='h-7 w-7 rounded-[50%]' />||
+                      <FaUserCircle className="h-7" />
+                    }
+                    <p className="font-semibold">
+                    {
+                        UserData.UserName || "User-786"
+                      }
+                    </p>
                   </div>
                   <NavLink
                     id={e}

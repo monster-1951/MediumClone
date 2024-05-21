@@ -1,36 +1,25 @@
-
 import { createSlice } from "@reduxjs/toolkit";
 export const ProfileSlice = createSlice({
   name: "ProfileData",
   initialState: {
     value: {
-      DP: localStorage.getItem('ProfilePhoto')||"",
-      UserName:
-        localStorage.getItem("UserName") === null
-          ? "User-786"
-          : JSON.parse(localStorage.getItem("UserName")),
-      Bio: localStorage.getItem("Bio")===null?"Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ipsa voluptatibus nihil laudantium illum necessitatibus tenetur distinctio hic nulla labore.":(JSON.parse(localStorage.getItem("Bio"))),
-      Lists:
-        localStorage.getItem("Lists") === null
-          ? [
-              {
-                Lname: "Reading list",
-                Ldesc: "",
-                Privacy: true,
-                Posts: [],
-                Id: "ReadingList",
-                createdOn: "May 17,2024",
-              },
-            ]
-          : JSON.parse(localStorage.getItem("Lists")),
-      Posts:
-        localStorage.getItem("PublishedPosts") === null
-          ? []
-          : JSON.parse(localStorage.getItem("PublishedPosts")),
-      About:
-        localStorage.getItem("about") === null
-          ? null
-          : JSON.parse(localStorage.getItem("about")),
+      DP: localStorage.getItem("ProfilePhoto") || "",
+      UserName: JSON.parse(localStorage.getItem("UserName")) || "User-786",
+      Bio:
+        JSON.parse(localStorage.getItem("Bio")) ||
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ipsa voluptatibus nihil laudantium illum necessitatibus tenetur distinctio hic nulla labore.",
+      Lists: JSON.parse(localStorage.getItem("Lists")) || [
+        {
+          Lname: "Reading list",
+          Ldesc: "",
+          Privacy: true,
+          Posts: [],
+          Id: "ReadingList",
+          createdOn: "May 17,2024",
+        },
+      ],
+      Posts: JSON.parse(localStorage.getItem("PublishedPosts")) || null,
+      About: JSON.parse(localStorage.getItem("about")) || "",
     },
   },
   reducers: {

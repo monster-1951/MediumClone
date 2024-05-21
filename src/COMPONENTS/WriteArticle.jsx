@@ -7,7 +7,8 @@ import ProfileDropDown from "./ProfileDropDown";
 import { data2 } from "../CONTEXT/context";
 import { useDispatch, useSelector } from "react-redux";
 import { DeleteThisPost } from "../REDUX/Drafts/DraftSlice";
-
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.bubble.css';
 const WriteArticle = () => {
   const Posts = useSelector(state => state.Posts.value);
   const dispatch = useDispatch()
@@ -32,7 +33,7 @@ const WriteArticle = () => {
 })
     return (
     <>
-      <nav className="flex justify-between sticky top-0 h-20 shadow-md px-2">
+      <nav className="bg-white z-10 flex justify-between sticky top-0 h-20 shadow-md px-2">
         <NavLink to="/MediumClone/" className="flex">
           <img src="MediumLogo.png" alt="" className="hidden sm:block"/>
           <span className="p-5" ref={savingRef}>Draft in User786</span>
@@ -59,15 +60,18 @@ const WriteArticle = () => {
         </div>
       </nav>
 
-      <input
+      <ReactQuill
+      theme="bubble"
       ref={headRef}
         type="text"
         placeholder="Title"
-        className="w-full h-20 text-5xl p-5 text-pretty outline-none"
+        className="placeholder:text-3xl w-full h-30 text-3xl p-5 font-normal text-pretty outline-none"
         value={heading}
         onChange={(e) => {
-          setheading(e.target.value)
-          Post.setPost({Heading:headRef.current.value,Data:dataRef.current.value})
+          setheading(e)
+          console.log();
+          console.log({Heading:headRef.current.value,Data:dataRef.current.value});
+          Post.setPost({Heading:headRef.current?.value?headRef.current.value:"",Data:dataRef.current?.value?dataRef.current.value:""})
          
           setTimeout(() => {
             savingRef.current.innerText = "Saved"
@@ -81,14 +85,17 @@ const WriteArticle = () => {
        
       />
       <hr />
-      <textarea
+      <ReactQuill
+      theme="bubble"
       ref={dataRef}
         placeholder="Tell your story..."
-        className="w-full h-56 p-5 text-justify text-pretty outline-none"
+        className="w-full font-normal text-gray-700 h-fit p-5 text-justify text-pretty outline-none"
         value={data}
         onChange={(e) => {
-            setdata(e.target.value)
-            Post.setPost({Heading:headRef.current.value,Data:dataRef.current.value})
+          setdata(e)
+          console.log({Heading:headRef.current,Data:dataRef.current});
+          Post.setPost({Heading:headRef.current?.value?headRef.current.value:"",Data:dataRef.current?.value?dataRef.current.value:""})
+         
   
             savingRef.current.innerText = "Saving..."
             setTimeout(() => {
@@ -98,7 +105,6 @@ const WriteArticle = () => {
               savingRef.current.innerText = "Draft in User786"
             }, 1600);
             
-            (dataRef.current.value.length>=1 || headRef.current.value.length>=1)?setsomeText(true) : setsomeText(false)
           }
         }
       />

@@ -13,13 +13,13 @@ function MoreDropDown({postNumber}) {
     const toggleOpen = () => {
       setisOpen(!isOpen);
     };
-    
   return (
     <div className="flex flex-col">
       <button onClick={() => {
         toggleOpen();
         DeleteThisPost.setDelThisPost(postNum)
-        console.log(DeleteThisPost);
+        console.log(DeleteThisPost,postNum);
+        
       }
       
       } className='sm:mr-36'>

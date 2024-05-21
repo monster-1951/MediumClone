@@ -20,11 +20,9 @@ const EditProfile = () => {
   const dpRef = useRef();
 
   useEffect(() => {
-    console.log(userNameRef.current.value.length);
-    console.log(dpRef.current);
-    console.log(disp.current);
+    console.log(localStorage.getItem("UserName"));
     console.log(localStorage.getItem("ProfilePhoto"));
-  }, [dpRef]);
+  }, [dpRef,userNameRef]);
 
   return (
     <div>
@@ -109,12 +107,14 @@ const EditProfile = () => {
                                 reader.readAsDataURL(image);
                               }
                               console.log(localStorage.getItem("ProfilePhoto"));
+                              window.location.reload()
                             }}
                           />
                           <button
                             className="text-red-500 font-normal"
                             onClick={() => {
                               localStorage.setItem("ProfilePhoto","");
+                              window.location.reload()
                             }}
                           >
                             Remove
@@ -140,6 +140,7 @@ const EditProfile = () => {
                       value={userName}
                       onChange={(e) => {
                         setuserName(e.target.value);
+                        localStorage.setItem("UserName",e.target.value)
                       }}
                     />
                     <div className="flex justify-between">
@@ -178,17 +179,7 @@ const EditProfile = () => {
                       <span>{BioRef?.current?.value?.length || 0}/160</span>
                     </div>
                   </div>
-                  <div className="flex justify-end space-x-5 font-semibold">
-                    <NavLink>
-                      <button
-                        className="rounded-3xl border-2 border-green-800 px-2 py-1 w-24 text-green-900"
-                        onClick={() => {
-                          toast.info("Not Saved");
-                        }}
-                      >
-                        Cancel
-                      </button>
-                    </NavLink>
+                  <div id="SaveButton" className="flex justify-end space-x-5 font-semibold">
                     <NavLink>
                       <button
                         className="rounded-3xl bg-green-800 px-2 py-1 w-20 text-white"
@@ -203,7 +194,7 @@ const EditProfile = () => {
                                 bio: BioRef.current.value || "",
                               })
                             );
-                            toast.success("Saved successfully");
+                            toast.success("Saved successfully.");
                           } else {
                             toast.error("User Name or User Bio can't be empty");
                           }

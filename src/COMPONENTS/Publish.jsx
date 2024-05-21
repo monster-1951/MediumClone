@@ -1,10 +1,12 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import TagsInput from "react-tagsinput";
 import { NavLink } from "react-router-dom";
 import { data2 } from "../CONTEXT/context";
 import { useDispatch } from "react-redux";
 import { InsertToPosts } from "../REDUX/Drafts/DraftSlice";
 import { nanoid } from "@reduxjs/toolkit";
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.bubble.css'; 
 const Publish = () => {
   const currentDate = new Date()
   const dispatch = useDispatch();
@@ -15,9 +17,21 @@ const Publish = () => {
   const [PreviewSubtitle, setPreviewSubtitle] = useState(Body);
   const [file, setfile] = useState("");
   const [tags, settags] = useState([]);
+  const imgRef = useRef()
+  const img = useRef("")
   const handleChange = (e) => {
+    const image = e.target.files[0]
     console.log(e.target.files[0]);
-    setfile(URL.createObjectURL(e.target.files[0]));
+    const reader = new FileReader();
+    reader.addEventListener("load",() => {
+      setfile(reader.result)
+    }
+    )
+    if(image){
+      reader.readAsDataURL(image)
+    }
+    console.log(reader.result);
+    
   };
   useEffect(() => {
     console.log(Postt.post);
@@ -59,24 +73,27 @@ const Publish = () => {
           file:text-sm file:font-semibold
           file:bg-violet-50 file:text-violet-700
           hover:file:bg-violet-100"
+            ref={imgRef}
             />
           </div>
         </div>
         <div className="p-3 space-y-2">
-          <input
+          <ReactQuill
+          theme="bubble"
             value={PreviewTitle}
             onChange={(e) => {
-              setPreviewTitle(e.target.value);
+              setPreviewTitle(e);
             }}
             type="text"
             placeholder="Write a preview title"
             className=" w-full outline-none placeholder:font-bold p-2"
           />
           <hr />
-          <input
+          <ReactQuill
+          theme="bubble"
             value={PreviewSubtitle}
             onChange={(e) => {
-              setPreviewSubtitle(e.target.value);
+              setPreviewSubtitle(e);
             }}
             type="text"
             placeholder="Write a preview subtitle"
@@ -114,6 +131,7 @@ const Publish = () => {
             <button
               className="bg-green-700 text-white rounded-full p-2 text-xs font-bold sm:w-[150%]"
               onClick={() => {
+                console.log(file);
                 dispatch(InsertToPosts({
                   Title:Postt.post.Heading,
                   Body:Postt.post.Data,

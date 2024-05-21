@@ -4,10 +4,11 @@ import { useSelector } from "react-redux";
 import { FaLock, FaUnlock, FaUserCircle } from "react-icons/fa";
 import { FaRegCircleUser, FaRegComment } from "react-icons/fa6";
 import { PiHandsClappingThin } from "react-icons/pi";
-import OptnsList from "./OptnsList";
+import { BsThreeDots } from "react-icons/bs";
 import { UserCircleIcon } from "@heroicons/react/20/solid";
 import SavePostDropDown from "./SavePostDropDown";
-import MoreDropDown from "./MoreDropDown";
+
+import ProfileData from "./ProfileData";
 
 const CurrentList = () => {
     const profileData = useRef()
@@ -17,13 +18,13 @@ const CurrentList = () => {
   const [Description, setDescription] = useState(CurrentLis.Ldesc);
   useEffect(() => {
     console.log(CurrentLis);
-    let height = profileData.current.clientHeight
-    console.log(height);
+    // let height = profileData.current.clientHeight
+    // console.log(height);
   });
   return (
     <>
       <div id="Main" className="lg:flex lg:justify-between p-5">
-        <div id="listData" className="lg:w-3/5 overflow-y-auto shadow-sm">
+        <div id="listData" className="lg:w-4/5 overflow-y-auto shadow-sm">
           <div id="userDetails" className="flex sm:w-full p-3 space-x-2">
             <div id="dp">
               <UserCircleIcon className="h-full  w-10 sm:w-14" />
@@ -53,21 +54,14 @@ const CurrentList = () => {
             <div id="listNamenDesc" className="p-4">
               <div
                 id="ListName"
-                className="flex font-bold text-3xl text-black h-16"
+                className="flex justify-between font-bold text-3xl text-black h-16"
               >
-                {CurrentLis.Lname}
-              </div>
-
-              <div
-                id="Menu"
-                className="flex justify-end h-10 border-t-2 border-b-2 border-solid p-3"
-              >
-                <OptnsList />
+                <p>{CurrentLis.Lname}</p><span className="mr-4"><BsThreeDots/></span>
               </div>
 
               <div
                 id="Desc"
-                className="px-3 flex justify-between mt-8 border-l-[3px] border-black space-x-6"
+                className="px-3 flex justify-between border-l-[3px] border-black space-x-6"
               >
                 {/* If we set the input value it should be saved in the list data */}
                 <input
@@ -126,18 +120,9 @@ const CurrentList = () => {
             })}
           </div>
         </div>
-        <div ref={profileData} id="ProfileData" className="sticky h-fit top-0 p-3 md:block hidden lg:w-1/4 shadow-sm">
-          <div className="space-y-3">
-            <FaUserCircle />
-            <p id="userName" className="text-left font-bold text-xl">user-786</p>
-            <p id="userBio" className="text-left font-medium text-gray-500">
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda officiis, dolores veritatis unde officia eveniet neque sint vel obcaecati? Autem delectus sunt harum eum aliquid quia ducimus minima? Voluptatem debitis, cum quidem numquam et obcaecati ab sed accusamus cumque culpa maiores reprehenderit perferendis magni voluptates eligendi amet ullam assumenda aliquid?
-            </p>
-            <div className="flex">
-            <button className="text-green-600 font-medium text-sm">Edit profile</button>
-            </div>
-          </div>
-        </div>
+       
+          <ProfileData/>
+   
       </div>
     </>
   );

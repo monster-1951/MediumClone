@@ -11,19 +11,19 @@ const ProfileData = () => {
   >
     <div className="space-y-3">
       {
-        UserData.DP ? <img src={UserData.DP} alt="" className='w-20 rounded-[50%]'/> : 
+        UserData.DP ? <img src={UserData.DP} alt="" className='w-20 h-20 rounded-[50%]'/> : 
       <FaUserCircle />
       }
       <p id="userName" className="text-left font-bold text-xl">
-        user-786
+        {UserData.UserName || "user-786"}
       </p>
       <p id="userBio" className="text-left font-medium text-gray-500">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda
+        {UserData.Bio || `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda
         officiis, dolores veritatis unde officia eveniet neque sint vel
         obcaecati? Autem delectus sunt harum eum aliquid quia ducimus
         minima? Voluptatem debitis, cum quidem numquam et obcaecati ab sed
         accusamus cumque culpa maiores reprehenderit perferendis magni
-        voluptates eligendi amet ullam assumenda aliquid?
+        voluptates eligendi amet ullam assumenda aliquid?`}
       </p>
       <div className="flex">
         <NavLink to="/MediumClone/ProfilePage/EditProfile">

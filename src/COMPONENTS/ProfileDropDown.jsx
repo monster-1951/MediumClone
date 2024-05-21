@@ -32,28 +32,28 @@ const ProfileDropDown = () => {
               to="/MediumClone/ProfilePage/Home"
               className="space-x-3 flex p-2"
             >
-              <FiUser className="inline mt-[1.5px]" />
+              <FiUser className="inline mt-[5px]" />
               <span>Profile</span>
             </NavLink>
             <NavLink
               to="/MediumClone/Library/YourLists"
               className="space-x-3 flex p-2"
             >
-              <BsBookmarks className="inline mt-[1.5px]" />
+              <BsBookmarks className="inline mt-[5px]" />
               <span>Library</span>
             </NavLink>
             <NavLink
               to="/MediumClone/Stories/Drafts"
               className="space-x-3 flex p-2"
             >
-              <RiArticleLine className="inline mt-[1.5px]" />
+              <RiArticleLine className="inline mt-[5px]" />
               <span>Stories</span>
             </NavLink>
             <NavLink
               to="/MediumClone/ProfilePage/EditProfile"
               className="space-x-3 flex p-2"
             >
-              <FaUserEdit className="inline mt-[1.5px]" />
+              <FaUserEdit className="inline mt-[5px]" />
               <span>Edit Profile</span>
             </NavLink>
           </ul>

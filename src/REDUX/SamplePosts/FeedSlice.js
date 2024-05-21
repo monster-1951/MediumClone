@@ -5,8 +5,8 @@ export const feedSlice = createSlice({
     value: [{
         Title:"The Future of Artificial Intelligence: Challenges and Opportunities",
         Body:"Artificial Intelligence (AI) is poised to revolutionize various industries, offering unprecedented opportunities for innovation. However, the rapid development of AI also presents significant challenges, including ethical dilemmas and the potential for widespread job displacement. In this article, we delve into the current state of AI, its future prospects, and the measures needed to navigate its complexities.",
-        PreviewTitle:" Navigating the AI Revolution",
-        PreviewSubtitle:" Understanding the benefits and challenges of Artificial Intelligence.",
+        PreviewTitle:"Navigating the AI Revolution",
+        PreviewSubtitle:"Understanding the benefits and challenges of Artificial Intelligence.",
         PreviewImage:"/Images/AI.jpeg",
         id:1,
         PublishedOn:"10/5/2024",
@@ -63,7 +63,7 @@ export const feedSlice = createSlice({
         Tags:['Renewable Energy', 'Sustainability', 'Innovation'],
       },
       {
-        Title:"Title: Mental Health Awareness: Breaking the Stigma",
+        Title:"Mental Health Awareness: Breaking the Stigma",
         Body:"Mental health is a critical component of overall well-being, yet stigma often prevents individuals from seeking help. This article discusses the importance of mental health awareness, the impact of stigma, and ways to support those struggling with mental health issues.",
         PreviewTitle:"Breaking the Silence on Mental Health",
         PreviewSubtitle:"Promoting awareness and support for mental health.",

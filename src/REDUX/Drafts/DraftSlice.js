@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const counterSlice = createSlice({
   name: 'Posts',
   initialState: {
-    value: localStorage.getItem("PublishedPosts")===null ? []:JSON.parse(localStorage.getItem("PublishedPosts")),
+    value: JSON.parse(localStorage.getItem("PublishedPosts")) || [],
   },
   reducers: {
     InsertToPosts: (state, action) => {
