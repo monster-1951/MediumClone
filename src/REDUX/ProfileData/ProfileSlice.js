@@ -4,7 +4,7 @@ export const ProfileSlice = createSlice({
   name: "ProfileData",
   initialState: {
     value: {
-      DP: "",
+      DP: localStorage.getItem('ProfilePhoto')||"",
       UserName:
         localStorage.getItem("UserName") === null
           ? "User-786"

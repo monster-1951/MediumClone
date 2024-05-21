@@ -16,7 +16,7 @@ const PostedStories = () => {
 
   return (
     <div className="lg:flex w-full">
-      <div className="flex justify-between space-x-2">
+      <div className="flex justify-between space-x-2 sm:w-11/12">
         <div className="shadow-md sm:w-full">
           <div id="head" className="shadow-md w-full">
             <div className="flex justify-between p-5 w-full">
