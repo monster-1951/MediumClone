@@ -116,18 +116,11 @@ const CurrentList = () => {
                     </div>
                     <div id="PostImage" className="w-40">
                    
-                    {
-                         !  (e.PreviewImage== undefined)?
-                         <img
-                          src={"/MediumClone" + e.PreviewImage}
+                    <img
+                          src={"/MediumClone" + e.reviewImage}
                           alt="Image not available"
-                          className="w-fit h-fit"
-                        />:(
-                          <div className="bg-slate-900 rounded-lg text-white sm:w-44 border-2 border-black sm:h-28 flex flex-col justify-center font-semibold p-3">
-                            Image not available
-                          </div>
-                        )
-                        }
+                          className="sm:w-44 sm:h-28 bg-slate-800 p-1 rounded-lg text-white font-semibold"
+                        />
                     </div>
                   </div>
                   <div id="PostResponses" className="flex p-3">
