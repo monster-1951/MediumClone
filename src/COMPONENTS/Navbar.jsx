@@ -11,8 +11,8 @@ const Navbar = () => {
     <nav className=" sticky top-0 h-20 shadow-md px-4 bg-white z-10 w-full">
       <div className="flex justify-between">
         <div className="flex space-x-4 p-3 sm:p-5 align-middle ">
-          <NavLink to="/MediumClone/" className="mt-1 sm:mt-2 w-fit">
-            <img src={UserData.MediumLogo} alt="Home" className=" sm:block w-fit h-fit font-extrabold" />
+          <NavLink to="/MediumClone/" className="mt-4 sm:mt-3 w-fit">
+            <img src={UserData.MediumLogo} alt="Home" className="sm:block w-7 h-7 font-extrabold" />
           </NavLink>
           <form className="flex sm:space-x-4 sm:p-3 align-middle">
             <label htmlFor="search">
@@ -25,7 +25,7 @@ const Navbar = () => {
             />
           </form>
         </div>
-        <div className="flex mt-6 sm:mt-9 space-x-3">
+        <div className="flex justify-between mt-6 sm:mt-9 space-x-3">
           <span className="hidden md:block">
             <NavLink to="/MediumClone/Write" className="flex">
               <FaRegEdit className="mt-1" />

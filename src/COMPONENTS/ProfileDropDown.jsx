@@ -18,7 +18,7 @@ const ProfileDropDown = () => {
     <div className="flex flex-col ">
       <button
         onClick={toggleOpen}
-        className="flex sm:w-32 sm:-mt-2"
+        className="flex justify-end sm:w-32 sm:-mt-2"
       >
         {UserData.DP ? (
           <img src={UserData.DP} alt="" className="h-10 w-10 rounded-[50%]" />
