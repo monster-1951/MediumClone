@@ -25,10 +25,11 @@ const Lists = () => {
               >
                 <div className="w-3/5 p-3 flex flex-col space-y-[7%]">
                   <div className="flex space-x-2">
-                    {
-                      <img src={UserData.DP} alt="" className='h-7 w-7 rounded-[50%]' />||
-                      <FaUserCircle className="h-7" />
-                    }
+                  {UserData.DP ? (
+            <img src={UserData.DP} alt="" className="w-7 h-7 rounded-[50%]" />
+          ) : (
+            <UserCircleIcon className="w-7" />
+          )}
                     <p className="font-semibold">
                       {
                         UserData.UserName || "User-786"

@@ -28,13 +28,11 @@ const CurrentList = () => {
         <div id="listData" className="lg:w-4/5 overflow-y-auto shadow-sm">
           <div id="userDetails" className="flex sm:w-full p-3 space-x-2">
             <div id="dp">
-              {(
-                <img
-                  src={UserData.DP}
-                  alt=""
-                  className="w-10 h-10 rounded-[50%]"
-                />
-              ) || <UserCircleIcon className="h-full  w-10 sm:w-14" />}
+              {UserData.DP ? (
+            <img src={UserData.DP} alt="" className="w-10 h-10 rounded-[50%]" />
+          ) : (
+            <UserCircleIcon className="h-full w-10" />
+          )}
             </div>
             <div id="UnameListDate" className="w-full">
               <div id="username" className="font-semibold text-lg flex">
