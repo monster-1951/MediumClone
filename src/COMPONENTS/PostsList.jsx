@@ -22,7 +22,7 @@ const PostsList = () => {
                   theme="bubble"
                   defaultValue={e.PreviewTitle}
                   readOnly
-                  className="sm:text-xl font-extrabold"
+                  className="text-sm sm:text-xl font-extrabold"
                 />
               </Link>
               <ReactQuill

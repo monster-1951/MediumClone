@@ -23,6 +23,7 @@ import Lists from "./COMPONENTS/Lists";
 import About from "./COMPONENTS/About";
 import EditProfile from "./COMPONENTS/EditProfile";
 import Post from "./COMPONENTS/Post";
+import ErrorPage from "./COMPONENTS/ErrorPage";
 function App() {
   const Listss = useSelector(state=>state.Lists.value)
   const [DelThisPost, setDelThisPost] = useState(0)
@@ -33,6 +34,10 @@ function App() {
     {
       path:"/MediumClone/",
       element:<><Navbar/><Categories/><Body/></>
+    },
+    {
+      path:"*",
+      element:<><Navbar/><ErrorPage/></>
     },
     {
       path:"/MediumClone/ProfilePage/Home",
@@ -56,50 +61,6 @@ function App() {
     },
     {
       path:"/MediumClone/Recommendation",
-      element:<><Navbar/><Categories/><Body/></>
-    },
-    {
-      path:"/MediumClone/Following",
-      element:<><Navbar/><Categories/><Body/></>
-    },
-    {
-      path:"/MediumClone/Productivity",
-      element:<><Navbar/><Categories/><Body/></>
-    },
-    {
-      path:"/MediumClone/RelationShips",
-      element:<><Navbar/><Categories/><Body/></>
-    },
-    {
-      path:"/MediumClone/Politics",
-      element:<><Navbar/><Categories/><Body/></>
-    },
-    {
-      path:"/MediumClone/Mindfullness",
-      element:<><Navbar/><Categories/><Body/></>
-    },
-    {
-      path:"/MediumClone/SocialMedia",
-      element:<><Navbar/><Categories/><Body/></>
-    },
-    {
-      path:"/MediumClone/LeaderShip",
-      element:<><Navbar/><Categories/><Body/></>
-    },
-    {
-      path:"/MediumClone/Marketing",
-      element:<><Navbar/><Categories/><Body/></>
-    },
-    {
-      path:"/MediumClone/History",
-      element:<><Navbar/><Categories/><Body/></>
-    },
-    {
-      path:"/MediumClone/WebDevelopment",
-      element:<><Navbar/><Categories/><Body/></>
-    },
-    {
-      path:"/MediumClone/LearnMore",
       element:<><Navbar/><Categories/><Body/></>
     },
     {

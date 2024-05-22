@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { BsThreeDots, BsEmojiExpressionless } from "react-icons/bs";
 import SavePostDropDown from "./SavePostDropDown";
+import { Link } from "react-router-dom";
 const ForYou = () => {
   const FeedList = useSelector((state) => state.Feed.value);
-  console.log(FeedList);
+ useEffect(() => {
+   console.log(FeedList[0]?.PreviewImage);
+ }
+ )
 
   return (
     <>
@@ -14,11 +18,24 @@ const ForYou = () => {
             <div key={e.id} className="p-3 flex flex-col">
               <div className="flex justify-between full">
                 <div className="h-fit p-3 text-left text-xl w-11/12">
+                  <Link to={`/MediumClone/Stories/Post`}>
                   <p className="font-bold sm:font-extrabold text-lg">{e.PreviewTitle}</p>
+                  </Link>
                   <p className="font-serif text-sm">{e.PreviewSubtitle}</p>
                 </div>
                 <div className="border-black border-1 p-5 w-6/12">
-                  <img src={"/MediumClone"+e.PreviewImage} alt="" className="w-fit h-fit" />
+                        {
+                         !  (e.PreviewImage== undefined)?
+                         <img
+                          src={"/MediumClone" + e.PreviewImage}
+                          alt="Image not available"
+                          className="w-fit h-fit"
+                        />:(
+                          <div className="bg-slate-900 rounded-lg text-white sm:w-44 border-2 border-black sm:h-28 flex flex-col justify-center font-semibold p-3">
+                            Image not available
+                          </div>
+                        )
+                        }                     
                 </div>
               </div>
               <div className="flex justify-between">

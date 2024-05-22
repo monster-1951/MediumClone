@@ -5,6 +5,7 @@ import { BsBookmarks } from "react-icons/bs";
 import { RiArticleLine } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { IoHomeOutline } from "react-icons/io5";
 
 const ProfileDropDown = () => {
   const UserData = useSelector((state) => state.ProfileData.value);
@@ -17,7 +18,7 @@ const ProfileDropDown = () => {
     <div className="flex flex-col ">
       <button
         onClick={toggleOpen}
-        className="flex justify-end sm:w-28 sm:-mt-2"
+        className="flex justify-center sm:w-32 sm:-mt-2"
       >
         {UserData.DP ? (
           <img src={UserData.DP} alt="" className="h-10 w-10 rounded-[50%]" />
@@ -27,7 +28,14 @@ const ProfileDropDown = () => {
       </button>
       {isOpen && (
         <div className="shadow-2xl rounded-sm bg-white sticky w-32">
-          <ul className="p-3 space-y-3 flex flex-col">
+          <div className="p-3 space-y-3 flex flex-col -mr-20">
+            <NavLink
+              to="/MediumClone/"
+              className="space-x-3 flex p-2"
+            >
+              <IoHomeOutline className="inline mt-[5px]" />
+              <span>Go to home</span>
+            </NavLink>
             <NavLink
               to="/MediumClone/ProfilePage/Home"
               className="space-x-3 flex p-2"
@@ -56,7 +64,7 @@ const ProfileDropDown = () => {
               <FaUserEdit className="inline mt-[5px]" />
               <span>Edit Profile</span>
             </NavLink>
-          </ul>
+          </div>
         </div>
       )}
     </div>

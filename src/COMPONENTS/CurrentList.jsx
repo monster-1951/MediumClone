@@ -7,11 +7,12 @@ import { PiHandsClappingThin } from "react-icons/pi";
 import { BsThreeDots } from "react-icons/bs";
 import { UserCircleIcon } from "@heroicons/react/20/solid";
 import SavePostDropDown from "./SavePostDropDown";
-
+import { Link } from "react-router-dom";
 import ProfileData from "./ProfileData";
 
 const CurrentList = () => {
-    const profileData = useRef()
+  const UserData = useSelector((state) => state.ProfileData.value);
+  const profileData = useRef();
   const Lists = useSelector((state) => state.Lists.value);
   const indOfList = useContext(indexOfList);
   const CurrentLis = Lists[indOfList.index];
@@ -27,11 +28,17 @@ const CurrentList = () => {
         <div id="listData" className="lg:w-4/5 overflow-y-auto shadow-sm">
           <div id="userDetails" className="flex sm:w-full p-3 space-x-2">
             <div id="dp">
-              <UserCircleIcon className="h-full  w-10 sm:w-14" />
+              {(
+                <img
+                  src={UserData.DP}
+                  alt=""
+                  className="w-10 h-10 rounded-[50%]"
+                />
+              ) || <UserCircleIcon className="h-full  w-10 sm:w-14" />}
             </div>
             <div id="UnameListDate" className="w-full">
               <div id="username" className="font-semibold text-lg flex">
-                User-786
+                {UserData.UserName || "User-786"}
               </div>
               <div id="listData" className="flex text-sm space-x-3">
                 <p id="Date" className="sm:w-[15%] flex">
@@ -51,12 +58,15 @@ const CurrentList = () => {
             </div>
           </div>
           <div id="PostsInThisList">
-            <div id="listNamenDesc" className="p-4">
+            <div id="listNamenDesc" className="p-4 space-y-6 sm:space-y-0">
               <div
                 id="ListName"
                 className="flex justify-between font-bold text-3xl text-black h-16"
               >
-                <p>{CurrentLis.Lname}</p><span className="mr-4"><BsThreeDots/></span>
+                <p>{CurrentLis.Lname}</p>
+                <span className="mr-4">
+                  <BsThreeDots />
+                </span>
               </div>
 
               <div
@@ -90,21 +100,34 @@ const CurrentList = () => {
                     <span id="DpOfAuthor">
                       <FaRegCircleUser className="h-7" />
                     </span>
-                    <p id="PostedBY">user-786</p>
+                    <p id="PostedBY">{`User-${(
+                      Math.random() * 1000
+                    ).toPrecision(3)}`}</p>
                   </div>
                   <div id="PostData" className="flex justify-between p-3">
                     <div>
+                      <Link to={`/MediumClone/Stories/Post`}>
                       <p className="font-bold sm:font-extrabold sm:text-2xl text-left">
                         {e.PreviewTitle}
-                      </p>
+                      </p></Link>
                       <p className="text-left font-normal sm:font-medium text-gray-500">
                         {e.PreviewSubtitle}
                       </p>
                     </div>
                     <div id="PostImage" className="w-40">
-
-                      <img src={"/MediumClone"+e.PreviewImage} alt="" />
-
+                   
+                    {
+                         !  (e.PreviewImage== undefined)?
+                         <img
+                          src={"/MediumClone" + e.PreviewImage}
+                          alt="Image not available"
+                          className="w-fit h-fit"
+                        />:(
+                          <div className="bg-slate-900 rounded-lg text-white sm:w-44 border-2 border-black sm:h-28 flex flex-col justify-center font-semibold p-3">
+                            Image not available
+                          </div>
+                        )
+                        }
                     </div>
                   </div>
                   <div id="PostResponses" className="flex p-3">
@@ -112,7 +135,9 @@ const CurrentList = () => {
                       <PiHandsClappingThin />
                       <FaRegComment />
                     </div>
-                    <div><SavePostDropDown /></div>
+                    <div>
+                      <SavePostDropDown />
+                    </div>
                   </div>
                   <hr />
                 </div>
@@ -120,9 +145,8 @@ const CurrentList = () => {
             })}
           </div>
         </div>
-       
-          <ProfileData/>
-   
+
+        <ProfileData />
       </div>
     </>
   );

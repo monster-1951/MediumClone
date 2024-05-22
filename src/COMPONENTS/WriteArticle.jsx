@@ -65,7 +65,7 @@ const WriteArticle = () => {
       ref={headRef}
         type="text"
         placeholder="Title"
-        className="placeholder:text-3xl w-full h-30 text-3xl p-5 font-normal text-pretty outline-none"
+        className="placeholder:text-3xl w-full h-30 p-5 font-normal text-pretty outline-none"
         value={heading}
         onChange={(e) => {
           setheading(e)
