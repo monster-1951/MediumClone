@@ -10,8 +10,8 @@ const Navbar = () => {
   return (
     <nav className=" sticky top-0 h-20 shadow-md px-4 bg-white z-10 w-full">
       <div className="flex justify-between">
-        <div className="flex space-x-4 p-5 align-middle ">
-          <NavLink to="/MediumClone/" className="mt-2 w-fit">
+        <div className="flex space-x-4 p-3 sm:p-5 align-middle ">
+          <NavLink to="/MediumClone/" className="mt-1 sm:mt-2 w-fit">
             <img src={UserData.MediumLogo} alt="Home" className=" sm:block w-fit h-fit font-extrabold" />
           </NavLink>
           <form className="flex sm:space-x-4 sm:p-3 align-middle">
@@ -21,7 +21,7 @@ const Navbar = () => {
             <input
               type="search"
               placeholder="Search"
-              className="sm:p-3 sm:h-8 shadow-inner outline-none sm:w-72 h-8"
+              className="sm:p-3 sm:h-8 shadow-inner outline-none w-20 sm:w-72 h-8 sm:mt-0 mt-3"
             />
           </form>
         </div>
@@ -33,7 +33,7 @@ const Navbar = () => {
             </NavLink>
           </span>
           <div className="flex space-x-3">
-          <ProfileDropDown className="" />
+          <ProfileDropDown className="w-full" />
           </div>
         </div>
       </div>
