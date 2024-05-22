@@ -8,11 +8,11 @@ const Navbar = () => {
   const UserData = useSelector(state=> state.ProfileData.value)
  
   return (
-    <nav className=" sticky top-0 h-20 shadow-md px-4 bg-white z-10 w-[360px] sm:w-full">
+    <nav className=" sticky top-0 h-20 shadow-md px-4 bg-white z-10 w-full">
       <div className="flex justify-between">
         <div className="flex space-x-4 p-5 align-middle ">
-          <NavLink to="/MediumClone/" className="mt-2">
-            <img src={UserData.MediumLogo} alt="Home" className=" sm:block w-6 h-6 font-extrabold" />
+          <NavLink to="/MediumClone/" className="mt-2 w-fit">
+            <img src={UserData.MediumLogo} alt="Home" className=" sm:block w-fit h-fit font-extrabold" />
           </NavLink>
           <form className="flex sm:space-x-4 sm:p-3 align-middle">
             <label htmlFor="search">

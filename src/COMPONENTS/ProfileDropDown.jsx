@@ -18,7 +18,7 @@ const ProfileDropDown = () => {
     <div className="flex flex-col ">
       <button
         onClick={toggleOpen}
-        className="flex justify-center sm:w-32 sm:-mt-2"
+        className="flex sm:w-32 sm:-mt-2"
       >
         {UserData.DP ? (
           <img src={UserData.DP} alt="" className="h-10 w-10 rounded-[50%]" />
@@ -27,7 +27,7 @@ const ProfileDropDown = () => {
         )}
       </button>
       {isOpen && (
-        <div className="shadow-2xl rounded-sm bg-white sticky w-32">
+        <div className="shadow-2xl rounded-sm bg-white sticky w-36">
           <div className="p-3 space-y-3 flex flex-col -mr-20">
             <NavLink
               to="/MediumClone/"
