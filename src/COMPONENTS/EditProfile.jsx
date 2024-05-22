@@ -107,18 +107,20 @@ const EditProfile = () => {
                                 reader.readAsDataURL(image);
                               }
                               console.log(localStorage.getItem("ProfilePhoto"));
-                              window.location.reload()
+                            
                             }}
                           />
+                          <NavLink to={"/MediumClone/ProfilePage/EditProfile"}>
                           <button
                             className="text-red-500 font-normal"
                             onClick={() => {
                               localStorage.setItem("ProfilePhoto","");
-                              window.location.reload()
+                              
                             }}
                           >
                             Remove
                           </button>
+                          </NavLink>
                         </div>
                       </div>
                       <div className="font-normal text-gray-800">
@@ -194,7 +196,7 @@ const EditProfile = () => {
                                 bio: BioRef.current.value || "",
                               })
                             );
-                            toast.success("Saved successfully.");
+                            toast.success("Saved successfully. If you've updated the dp, just reload the page");
                           } else {
                             toast.error("User Name or User Bio can't be empty");
                           }
